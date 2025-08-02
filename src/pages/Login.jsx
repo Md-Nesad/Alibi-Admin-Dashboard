@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/alibiLogo.jpg";
+import logo from "../assets/images/alibiLogo.jpg";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    navigate("/adminDashboard");
+    navigate("/dashboard/overview");
   };
 
   return (
