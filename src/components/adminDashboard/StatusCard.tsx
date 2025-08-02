@@ -2,6 +2,7 @@ import { FaUsers, FaExclamationTriangle } from "react-icons/fa";
 import Drone from "../../assets/icons/Drone";
 import Setting from "../../assets/icons/Setting";
 import { Link } from "react-router-dom";
+import { DroneDeployment } from "../../assets/icons/Overview";
 
 const StatusCard = ({ icon, label, value, path }) => (
   <Link to={path}>
@@ -31,7 +32,7 @@ export default function DashboardStatus() {
         path="/dashboard/user_interection"
       />
       <StatusCard
-        icon={<Drone />}
+        icon={<DroneDeployment />}
         label="Drone Missions"
         value="16"
         path="/dashboard/drone_deployee"
