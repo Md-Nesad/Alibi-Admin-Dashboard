@@ -4,6 +4,12 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
 import Overview from "./pages/Overview";
+import UserManageMent from "./pages/UserManageMent";
+import LiveMonitoring from "./pages/LiveMonitoring";
+import AIIntelligence from "./pages/AIIntelligence";
+import UserInterection from "./pages/UserInterection";
+import DroneDeploye from "./pages/DroneDeploye";
+import Analysis from "./pages/Analysis";
 
 function App() {
   return (
@@ -14,21 +20,14 @@ function App() {
           <Route index element={<Login />} />
           <Route path="*" element={<NotFound />} />
           {/* dashboard nested routes */}
-          <Route path="/dashboard/overview" element={<Dashboard />}>
-            <Route index element={<Overview />} />
-            {/*
-            <Route path="room" element={<AllRooms />} />
-            <Route path="available" element={<AvailableRooms />} />
-            <Route path="unavailable" element={<UnAvailableRooms />} />
-            <Route path="dashboard_booking" element={<Booking />} />
-            <Route path="add_booking" element={<AddBookingInformation />} />
-            <Route path="cancelation" element={<Cancelation />} />
-            <Route path="reservation" element={<Reservation />} />
-            <Route path="housekeeping" element={<HouseKeeping />} />
-            <Route path="add_housekeeper" element={<AddHouseKeeper />} />
-            <Route path="guests" element={<GuestList />} />
-            <Route path="concierge" element={<ConciergeList />} />
-            <Route path="addconcierge" element={<AddConcierge />} /> */}
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="overview" element={<Overview />} />
+            <Route path="user_management" element={<UserManageMent />} />
+            <Route path="live_monitoring" element={<LiveMonitoring />} />
+            <Route path="ai_inteligence" element={<AIIntelligence />} />
+            <Route path="user_interection" element={<UserInterection />} />
+            <Route path="drone_deployee" element={<DroneDeploye />} />
+            <Route path="analysis" element={<Analysis />} />
           </Route>
         </Routes>
       </BrowserRouter>

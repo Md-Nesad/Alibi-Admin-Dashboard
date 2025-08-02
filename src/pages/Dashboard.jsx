@@ -32,27 +32,27 @@ const Dashboard = () => {
     },
     {
       name: "Live Monitoring",
-      path: "/dashboard/cancelation",
+      path: "/dashboard/live_monitoring",
       icon: <LiveMonitoring />,
     },
     {
       name: "AI Intelligence Center",
-      path: "/dashboard/reservation",
+      path: "/dashboard/ai_inteligence",
       icon: <AI />,
     },
     {
       name: "User Interaction",
-      path: "/dashboard/housekeeping",
+      path: "/dashboard/user_interection",
       icon: <UserInterection />,
     },
     {
       name: "Drone Deployment",
-      path: "/dashboard/guests",
+      path: "/dashboard/drone_deployee",
       icon: <DroneDeployment />,
     },
     {
       name: "Analytics & Reports",
-      path: "/dashboard/concierge",
+      path: "/dashboard/analysis",
       icon: <Analytics />,
     },
   ];

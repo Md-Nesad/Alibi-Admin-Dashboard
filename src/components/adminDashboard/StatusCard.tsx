@@ -28,19 +28,19 @@ export default function DashboardStatus() {
         icon={<FaExclamationTriangle />}
         label="Flagged Violations"
         value="10"
-        path="/dashboard/analysis"
+        path="/dashboard/user_interection"
       />
       <StatusCard
         icon={<Drone />}
         label="Drone Missions"
         value="16"
-        path="/dashboard/drone_deployment"
+        path="/dashboard/drone_deployee"
       />
       <StatusCard
         icon={<Setting />}
         label="System Status"
         value="Healthy"
-        path="/dashboard/setting"
+        path="/dashboard/analysis"
       />
     </div>
   );

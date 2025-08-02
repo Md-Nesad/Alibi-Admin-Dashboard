@@ -14,7 +14,7 @@ const DashboardMenu = () => {
           {/* Logo */}
           <div className="flex items-center gap-15">
             <div className="flex items-center h-14">
-              <Link to="/dashboard/room" className="flex items-center">
+              <Link to="/dashboard/overview" className="flex items-center">
                 <img
                   src={logotwo}
                   alt="Bahamas Logo"
