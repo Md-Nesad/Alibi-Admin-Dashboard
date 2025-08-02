@@ -1,6 +1,6 @@
 import avatarOne from "../assets/images/avatarOne.png";
 import avatarTwo from "../assets/images/avatarTwo.png";
-import avatarThree from "../assets/images/avatarThree.png";
+import avatarThree from "../assets/images/avatarthree.png";
 import avatarFour from "../assets/images/avatarFour.png";
 
 export const alerts = [

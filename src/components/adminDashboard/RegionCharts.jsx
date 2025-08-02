@@ -6,7 +6,6 @@ import {
   BarElement,
   Tooltip,
 } from "chart.js";
-import { useEffect, useState } from "react";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 

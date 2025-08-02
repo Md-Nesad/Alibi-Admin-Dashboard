@@ -1,7 +1,6 @@
-import { CheckCircle, Folder, MessageCircle } from "lucide-react";
 import { Approve, File, Message } from "../../assets/icons/RecentAlerts";
 import { alerts } from "../../data/Data";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 export default function RecentAlerts() {
   const notify = () =>
