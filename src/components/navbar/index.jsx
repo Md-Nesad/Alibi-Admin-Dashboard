@@ -32,7 +32,7 @@ const DashboardMenu = () => {
                 <input
                   type="text"
                   placeholder="Search here..."
-                  className="w-full pl-4 pr-12 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-orange-400 text-sm"
+                  className="w-full pl-4 pr-12 py-2 border border-gray-700 rounded-full focus:outline-none focus:ring-1 focus:ring-orange-400 text-sm"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
                   <Search className="w-5 h-5" />
@@ -58,7 +58,7 @@ const DashboardMenu = () => {
             <div className="relative">
               <button
                 onClick={() => setOpen(!open)}
-                className="flex items-center gap-2 bg-gray-800 text-white px-3 py-2 rounded-full border border-white"
+                className="flex items-center gap-2 bg-[#000000] text-white px-3 py-2 rounded-full border border-gray-500"
               >
                 <img
                   src={adminImage}
