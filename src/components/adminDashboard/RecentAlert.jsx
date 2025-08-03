@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Approve,
   File,
@@ -5,18 +6,15 @@ import {
   VidoeCall,
 } from "../../assets/icons/RecentAlerts";
 import { alerts } from "../../data/Data";
-import toast from "react-hot-toast";
+import UserModal from "../../modal/UserModal";
+import { approve, download, message } from "../../data/Toast";
 
 export default function RecentAlerts() {
-  const approve = () =>
-    setTimeout(() => toast.success("Download Completed"), 1000);
+  const [selectedUser, setSelectedUser] = useState(null);
 
-  const file = () => setTimeout(() => toast.success("Message Sent"), 500);
-
-  const message = () => setTimeout(() => toast.success("Approved"), 500);
   return (
     <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-xl w-full h-[285px] shadow-md border border-gray-800">
-      <h2 className="text-xl font-semibold py-3 pl-6 border-b border-[#334155]">
+      <h2 className="text-xl font-medium py-3 pl-6 border-b border-[#334155]">
         Recent Alerts
       </h2>
 
@@ -41,13 +39,16 @@ export default function RecentAlerts() {
                   className="hover:bg-[#1e293b]/60 transition border-t border-gray-800"
                 >
                   <td className="px-3 py-1 border-r border-gray-800">
-                    <div className="flex items-center gap-2">
+                    <div
+                      onClick={() => setSelectedUser(alert)}
+                      className="flex items-center gap-2 cursor-pointer"
+                    >
                       <img
                         src={alert.avatar}
                         alt={alert.name}
                         className="w-8 h-8 rounded-full object-cover"
                       />
-                      <span>{alert.name}</span>
+                      <span className="text-[#FFFFFFB2]">{alert.name}</span>
                     </div>
                   </td>
                   <td className="px-3 py-1 border-r border-gray-800 text-gray-400">
@@ -65,7 +66,7 @@ export default function RecentAlerts() {
                       <button
                         title="Download"
                         className="hover:scale-105 transition-transform duration-150 cursor-pointer focus:outline-none"
-                        onClick={file}
+                        onClick={download}
                       >
                         <File className="text-purple-500 w-5 h-5" />
                       </button>
@@ -87,6 +88,14 @@ export default function RecentAlerts() {
                   </td>
                 </tr>
               ))}
+
+              {/* Modal */}
+              {selectedUser && (
+                <UserModal
+                  user={selectedUser}
+                  onClose={() => setSelectedUser(null)}
+                />
+              )}
             </tbody>
           </table>
         </div>

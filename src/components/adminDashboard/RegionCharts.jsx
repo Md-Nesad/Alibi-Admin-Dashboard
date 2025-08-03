@@ -90,7 +90,7 @@ export default function IncomeOverTimeChart() {
       className="bg-[#0F131C] rounded-xl border border-gray-800 p-4 w-full shadow-sm"
       style={{ height: 287 }}
     >
-      <h2 className="text-[#FFFFFFCC] text-lg mb-2 ml-2 font-semibold">
+      <h2 className="text-[#FFFFFFCC] text-lg mb-2 ml-2 font-medium">
         Missed Check-ins per Region
       </h2>
       <div className="mb-2" />

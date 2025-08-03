@@ -7,7 +7,7 @@ export const alerts = [
   {
     name: "James Carter",
     description: "Unauthorized login attempt.",
-    avatar: avatarOne,
+    avatar: avatarFour,
   },
   {
     name: "Emily Johnson",
@@ -22,6 +22,6 @@ export const alerts = [
   {
     name: "Ashley Morgan",
     description: "Case escalated.",
-    avatar: avatarFour,
+    avatar: avatarOne,
   },
 ];
