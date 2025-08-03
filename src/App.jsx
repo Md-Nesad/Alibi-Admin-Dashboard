@@ -1,25 +1,39 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Suspense, lazy } from "react";
 import "./App.css";
-import Login from "./pages/Login";
-import NotFound from "./pages/NotFound";
-import Dashboard from "./pages/Dashboard";
-import Overview from "./pages/Overview";
-import UserManageMent from "./pages/UserManageMent";
-import LiveMonitoring from "./pages/LiveMonitoring";
-import AIIntelligence from "./pages/AIIntelligence";
-import UserInterection from "./pages/UserInterection";
-import DroneDeploye from "./pages/DroneDeploye";
-import Analysis from "./pages/Analysis";
+
+// Lazy-loaded pages
+const Login = lazy(() => import("./pages/Login"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Overview = lazy(() => import("./pages/Overview"));
+const UserManageMent = lazy(() => import("./pages/UserManageMent"));
+const LiveMonitoring = lazy(() => import("./pages/LiveMonitoring"));
+const AIIntelligence = lazy(() => import("./pages/AIIntelligence"));
+const UserInterection = lazy(() => import("./pages/UserInterection"));
+const DroneDeploye = lazy(() => import("./pages/DroneDeploye"));
+const Analysis = lazy(() => import("./pages/Analysis"));
+
+// Loading UI Component
+function LoadingScreen() {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white animate-fade">
+      <div className="text-center">
+        <div className="loader mb-2"></div>
+        <p className="text-gray-600">Loading...</p>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Suspense fallback={<LoadingScreen />}>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route index element={<Login />} />
           <Route path="*" element={<NotFound />} />
-          {/* dashboard nested routes */}
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="overview" element={<Overview />} />
             <Route path="user_management" element={<UserManageMent />} />
@@ -30,8 +44,8 @@ function App() {
             <Route path="analysis" element={<Analysis />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 

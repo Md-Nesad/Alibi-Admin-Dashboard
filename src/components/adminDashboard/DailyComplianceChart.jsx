@@ -41,7 +41,7 @@ const formatTime = (value) => {
     70: "7pm",
     80: "9pm",
     90: "11pm",
-    100: "12am",
+    100: "12pm",
   };
   return timeMap[value] || value;
 };

@@ -6,4 +6,4 @@ export const message = () =>
   setTimeout(() => toast.success("Message Sent"), 500);
 
 export const openFolder = () =>
-  setTimeout(() => toast.success("Folder Opened"), 500);
+  setTimeout(() => toast.success("File Opened"), 500);

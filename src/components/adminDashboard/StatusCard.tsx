@@ -18,7 +18,7 @@ const StatusCard = ({ icon, label, value, path }) => (
 
 export default function DashboardStatus() {
   return (
-    <div className="grid grid-cols-4 gap-4 my-5">
+    <div className="grid grid-cols-4 gap-4 my-5 2xl:gap-6">
       <StatusCard
         icon={<FaUsers />}
         label="Active Users"

@@ -36,15 +36,15 @@ const MiniMap = ({ alerts, userLocation }) => {
   const ammanCoords = [31.9632, 35.9239];
 
   return (
-    <div className="relative w-full bg-[#0a0a0a] h-[287px] rounded-2xl shadow-lg">
+    <div className="relative w-full bg-[#0a0a0a] h-full rounded-2xl shadow-lg">
       <h2 className="absolute top-2 left-12 z-[1000] text-[#FFFFFFCC] text-lg font-medium px-3 py-1 rounded shadow">
         Mini Map
       </h2>
       <MapContainer
         center={userLocation || ammanCoords}
-        zoom={12}
+        zoom={13}
         scrollWheelZoom={false}
-        className="w-full h-[287px] rounded-b-2xl"
+        className="w-full h-full rounded-xl"
       >
         {/* Dark Tile Layer */}
         <TileLayer

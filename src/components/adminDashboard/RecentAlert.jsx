@@ -26,10 +26,10 @@ export default function RecentAlerts() {
                 <th className="text-left px-4 py-2 border-r border-gray-800">
                   Name
                 </th>
-                <th className="text-left px-4 py-1 border-r border-gray-800">
+                <th className="text-left px-4 py-1 border-r border-gray-800 2xl:text-center">
                   Description
                 </th>
-                <th className="text-left px-4 py-1">Action</th>
+                <th className="text-left px-4 py-1 2xl:text-center">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -38,10 +38,10 @@ export default function RecentAlerts() {
                   key={index}
                   className="hover:bg-[#1e293b]/60 transition border-t border-gray-800"
                 >
-                  <td className="px-3 py-1 border-r border-gray-800">
+                  <td className="px-3 py-1 border-r border-gray-800 ">
                     <div
                       onClick={() => setSelectedUser(alert)}
-                      className="flex items-center gap-2 cursor-pointer"
+                      className="flex items-center gap-2 cursor-pointer "
                     >
                       <img
                         src={alert.avatar}
@@ -51,11 +51,11 @@ export default function RecentAlerts() {
                       <span className="text-[#FFFFFFB2]">{alert.name}</span>
                     </div>
                   </td>
-                  <td className="px-3 py-1 border-r border-gray-800 text-gray-400">
+                  <td className="px-3 py-1 border-r border-gray-800 text-gray-400 2xl:text-center">
                     {alert.description}
                   </td>
                   <td className="px-3 py-1">
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 2xl:gap-5 2xl:justify-center">
                       <button
                         title="Approve"
                         className="hover:scale-105 transition-transform duration-150 cursor-pointer focus:outline-none"
@@ -64,7 +64,7 @@ export default function RecentAlerts() {
                         <Approve className="text-green-500 w-5 h-5" />
                       </button>
                       <button
-                        title="open folder"
+                        title="open file"
                         className="hover:scale-105 transition-transform duration-150 cursor-pointer focus:outline-none"
                         onClick={openFolder}
                       >
