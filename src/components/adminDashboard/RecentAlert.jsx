@@ -7,7 +7,7 @@ import {
 } from "../../assets/icons/RecentAlerts";
 import { alerts } from "../../data/Data";
 import UserModal from "../../modal/UserModal";
-import { approve, download, message } from "../../data/Toast";
+import { approve, message, openFolder } from "../../data/Toast";
 
 export default function RecentAlerts() {
   const [selectedUser, setSelectedUser] = useState(null);
@@ -64,9 +64,9 @@ export default function RecentAlerts() {
                         <Approve className="text-green-500 w-5 h-5" />
                       </button>
                       <button
-                        title="Download"
+                        title="open folder"
                         className="hover:scale-105 transition-transform duration-150 cursor-pointer focus:outline-none"
-                        onClick={download}
+                        onClick={openFolder}
                       >
                         <File className="text-purple-500 w-5 h-5" />
                       </button>
