@@ -34,14 +34,14 @@ const formatTime = (value) => {
   const timeMap = {
     10: "6am",
     20: "9am",
-    30: "12pm",
-    40: "3pm",
-    50: "6pm",
-    60: "9pm",
-    70: "12am",
-    80: "3am",
-    90: "6am",
-    100: "9am",
+    30: "11am",
+    40: "1pm",
+    50: "3pm",
+    60: "5pm",
+    70: "7pm",
+    80: "9pm",
+    90: "11pm",
+    100: "12am",
   };
   return timeMap[value] || value;
 };
@@ -68,7 +68,7 @@ const DailyComplianceChart = () => {
               fontWeight: "500",
               fontSize: 12,
               dy: 7,
-              dx: 13,
+              dx: 10,
             }}
             axisLine={false} // removes the axis line
             tickLine={false} // removes the tick mark (small line above label)
