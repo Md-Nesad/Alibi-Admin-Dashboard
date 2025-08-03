@@ -9,7 +9,7 @@ const StatusCard = ({ icon, label, value, path }) => (
     <div className="bg-[#0F131C] text-[#FFFFFFCC] px-5 py-4 rounded-lg flex items-center gap-4 shadow-md w-full border border-gray-800">
       <div className="text-2xl text-[#FFFFFFCC]">{icon}</div>
       <div>
-        <p className="text-sm text-[#FFFFFFCC]">{label}</p>
+        <p className="text-sm text-[#FFFFFF80] font-medium">{label}</p>
         <p className="text-xl font-semibold">{value}</p>
       </div>
     </div>

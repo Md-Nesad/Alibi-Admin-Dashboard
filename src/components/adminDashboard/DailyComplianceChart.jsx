@@ -30,27 +30,57 @@ const data = [
   { x: 100, y: 80 },
 ];
 
+const formatTime = (value) => {
+  const timeMap = {
+    10: "6am",
+    20: "9am",
+    30: "12pm",
+    40: "3pm",
+    50: "6pm",
+    60: "9pm",
+    70: "12am",
+    80: "3am",
+    90: "6am",
+    100: "9am",
+  };
+  return timeMap[value] || value;
+};
+
 const DailyComplianceChart = () => {
   return (
-    <div className="bg-[#0F131C] pr-5 py-3 rounded-xl w-full border border-gray-800">
-      <h2 className="text-white text-lg mb-2 ml-6 font-semibold">
+    <div className="bg-[#0F131C] pr-5 py-3 rounded-xl w-full h-[285px] border border-gray-800">
+      <h2 className="text-[#FFFFFFCC] text-lg mb-6 ml-6 font-semibold">
         Daily Compliance
       </h2>
-      <ResponsiveContainer width="100%" height={200}>
+      <ResponsiveContainer width="100%" height={205}>
         <AreaChart
           data={data}
-          margin={{ top: 0, right: 0, left: -12, bottom: 0 }}
+          margin={{ top: 0, right: 0, left: -14, bottom: 0 }}
         >
           <CartesianGrid stroke="#333" strokeDasharray="0 0" vertical={false} />
           <XAxis
             dataKey="x"
             domain={[10, 100]}
             ticks={[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}
+            tickFormatter={formatTime}
+            tick={{
+              fill: "#FFFFFF80",
+              fontWeight: "500",
+              fontSize: 12,
+              dy: 7,
+              dx: 13,
+            }}
+            axisLine={false} // removes the axis line
+            tickLine={false} // removes the tick mark (small line above label)
           />
+
           <YAxis
             strokeOpacity={0}
             domain={[25, 100]}
             ticks={[25, 50, 75, 100]}
+            tickFormatter={(value) => `${value}%`}
+            tick={{ fill: "#FFFFFF80", fontWeight: "500", fontSize: 12 }}
+            dy={-2}
           />
           <Tooltip
             contentStyle={{ backgroundColor: "#1F212C", borderColor: "#333" }}

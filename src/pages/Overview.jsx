@@ -16,12 +16,12 @@ export default function Overview() {
       <DashboardStatus />
 
       <div className="grid grid-cols-2 gap-5 mb-6">
+        <RecentAlerts />
         <DailyComplianceChart />
-        <RegionCharts />
       </div>
 
       <div className="grid grid-cols-2 gap-5 mb-10">
-        <RecentAlerts />
+        <RegionCharts />
         <MiniMap alerts={alerts} userLocation={[31.9632, 35.9239]} />
       </div>
     </div>

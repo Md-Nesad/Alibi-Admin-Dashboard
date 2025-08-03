@@ -10,35 +10,25 @@ import {
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
 const labels = [
-  "Region",
-  "Region",
-  "Region",
-  "Region",
-  "Region",
-  "Region",
-  "Region",
+  "Al-Qasaba",
+  "Marka",
+  "Al-Qwesmeh",
+  "al-Jāmiʻah",
+  "Wadi Al Seer",
 ];
 
-const weeklyData = [8, 6, 5, 4, 3, 2, 7];
+const weeklyData = [8, 7, 6, 4, 8];
 
 const chartData = {
   labels,
   datasets: [
     {
       data: weeklyData,
-      backgroundColor: [
-        "#F2B100",
-        "#DA9F00",
-        "#C28E00",
-        "#795900",
-        "#614700",
-        "#A97C00",
-        "#DA9F00",
-      ],
+      backgroundColor: ["#F2B100", "#DA9F00", "#C28E00", "#A97C00", "#F2B100"],
       borderRadius: 0,
-      barPercentage: 0.6,
-      categoryPercentage: 0.7,
-      borderSkipped: true,
+      barPercentage: 0.4,
+      categoryPercentage: 0.6,
+      borderSkipped: false,
       borderWidth: 0,
     },
   ],
@@ -68,8 +58,8 @@ const options = {
       grid: { display: false },
       ticks: {
         color: "#A0AEC0",
-        font: { size: 14, family: "Inter, sans-serif" },
-        padding: 6,
+        font: { size: 13, family: "Inter, sans-serif" },
+        padding: 15,
       },
     },
     y: {
@@ -82,7 +72,7 @@ const options = {
         drawBorder: false,
       },
       ticks: {
-        color: "#CBD5E1",
+        color: "#FFFFFF80",
         font: { size: 13, family: "Inter, sans-serif" },
         stepSize: 3,
         callback: function (value) {
@@ -98,13 +88,13 @@ export default function IncomeOverTimeChart() {
   return (
     <div
       className="bg-[#0F131C] rounded-xl border border-gray-800 p-4 w-full shadow-sm"
-      style={{ height: 260 }}
+      style={{ height: 287 }}
     >
-      <h2 className="text-white text-lg mb-2 ml-2 font-semibold">
+      <h2 className="text-[#FFFFFFCC] text-lg mb-2 ml-2 font-semibold">
         Missed Check-ins per Region
       </h2>
       <div className="mb-2" />
-      <div style={{ height: 200 }}>
+      <div style={{ height: 230 }}>
         <Bar data={chartData} options={options} />
       </div>
     </div>

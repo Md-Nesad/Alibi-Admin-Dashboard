@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
-import image from "../../assets/images/Ellipse 57.png";
+import image from "../../assets/images/Ellipse 57 (1).png";
 
 const MiniMap = ({ alerts, userLocation }) => {
   // User icon
@@ -11,14 +11,14 @@ const MiniMap = ({ alerts, userLocation }) => {
 
   // Location-type icon (e.g., for city)
   const locationTypeIcon = new L.Icon({
-    iconUrl: image, // location pin icon
-    iconSize: [40, 40],
-    iconAnchor: [20, 50],
+    iconUrl: image,
+    iconSize: [30, 30],
+    iconAnchor: [16, 35], // center bottom
   });
 
   // Amman label icon (always visible text)
   const ammanLabelIcon = new L.DivIcon({
-    html: `<div style="color:white; font-size:15px; font-weight:bold; padding:3px 6px; border-radius:4px; display:inline-block; box-shadow:0 0 3px rgba(0,0,0,0.4); margin-left:35px;">Amman</div>`,
+    html: `<div style="color:#FFFFFFCC; font-size:15px; font-weight:bold; padding:3px 6px; border-radius:4px; display:inline-block; box-shadow:0 0 3px rgba(0,0,0,0.4); margin-left:35px;">Amman</div>`,
     className: "",
     iconAnchor: [0, 0],
   });
@@ -36,15 +36,15 @@ const MiniMap = ({ alerts, userLocation }) => {
   const ammanCoords = [31.9632, 35.9239];
 
   return (
-    <div className="relative w-full bg-[#0a0a0a] rounded-2xl shadow-lg">
-      <h2 className="text-xl font-semibold py-4 pl-6 border-b border-[#334155]">
+    <div className="relative w-full bg-[#0a0a0a] h-[287px] rounded-2xl shadow-lg">
+      <h2 className="absolute top-2 left-12 z-[1000] text-[#FFFFFFCC] text-lg font-medium px-3 py-1 rounded shadow">
         Mini Map
       </h2>
       <MapContainer
         center={userLocation || ammanCoords}
-        zoom={13}
+        zoom={12}
         scrollWheelZoom={false}
-        className="w-full h-[320px] rounded-b-2xl"
+        className="w-full h-[287px] rounded-b-2xl"
       >
         {/* Dark Tile Layer */}
         <TileLayer
@@ -80,7 +80,7 @@ const MiniMap = ({ alerts, userLocation }) => {
       </MapContainer>
 
       {/* Legend */}
-      <div className="absolute bottom-6 right-4 z-[1000] bg-[#1a1a1a]/90 border border-white/10 text-white p-3 rounded-md text-xs shadow-md space-y-1">
+      <div className="absolute bottom-4 right-4 z-[1000] bg-[#1a1a1a]/90 border border-white/10 text-[#FFFFFFCC] p-3 rounded-md text-xs shadow-md space-y-1">
         <div className="flex items-center">
           <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span> High
           Alert
