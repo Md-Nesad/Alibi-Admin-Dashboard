@@ -8,7 +8,7 @@ const DashboardMenu = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full bg-[#000000] shadow-sm border-b border-gray-700 fixed top-0 z-50">
+    <header className="w-full bg-[#000000] shadow-sm border-b border-gray-700 fixed top-0 z-1005">
       <div className="w-full px-4 sm:px-10 md:px-10 py-2">
         <div className="flex flex-wrap justify-between items-center gap-4">
           {/* Logo */}

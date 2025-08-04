@@ -49,7 +49,7 @@ const RecentAlertModal = ({ user, onClose }) => {
 const Field = ({ label, value }) => (
   <div>
     <div className="text-gray-400 text-[12px] w-[300px]">{label}</div>
-    <div className="bg-[#17202C] pl-5 py-[7px] mt-1 border border-gray-700 rounded text-[13px] text-[#ffffffc2]">
+    <div className="bg-[#17202C] pl-3 py-[7px] mt-1 border border-gray-700 rounded text-[13px] text-[#ffffffc2]">
       {value}
     </div>
   </div>

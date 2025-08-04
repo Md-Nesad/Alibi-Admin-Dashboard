@@ -51,7 +51,7 @@ export default function RecentAlerts() {
                       <span className="text-[#FFFFFFB2]">{alert.name}</span>
                     </div>
                   </td>
-                  <td className="px-3 py-1 border-r border-gray-800 text-gray-400 2xl:text-center">
+                  <td className="px-3 py-1 border-r border-gray-800 text-[#FFFFFFB2] text-[12px] 2xl:text-center">
                     {alert.description}
                   </td>
                   <td className="px-3 py-1">

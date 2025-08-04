@@ -1,26 +1,26 @@
 import avatarFour from "../assets/images/image1.png";
-import avatarTwo from "../assets/images/image2.png";
-import avatarThree from "../assets/images/image3.png";
+import avatarThree from "../assets/images/image2.png";
+import avatarTwo from "../assets/images/image3.png";
 import avatarOne from "../assets/images/image4.png";
 
 export const alerts = [
   {
-    name: "James Carter",
+    name: "Mira Al-Sayfani",
     description: "Unauthorized login attempt.",
     avatar: avatarOne,
   },
   {
-    name: "Emily Johnson",
+    name: "Salma Dahrani",
     description: "Location changed suddenly.",
     avatar: avatarTwo,
   },
   {
-    name: "Michael Reed",
+    name: "Yousef Barqani",
     description: "Device inactive.",
     avatar: avatarThree,
   },
   {
-    name: "Ashley Morgan",
+    name: "Noor Khandari",
     description: "Case escalated.",
     avatar: avatarFour,
   },
@@ -28,7 +28,7 @@ export const alerts = [
 
 export const usermanagement = [
   {
-    name: "James Carter",
+    name: "Mira Al-Sayfani",
     violation: "Unauthorized Login",
     region: "West Amman",
     date: "01 Aug 2025 - 14:32 PM",
@@ -36,7 +36,7 @@ export const usermanagement = [
     avatar: avatarOne,
   },
   {
-    name: "Emily Johnson",
+    name: "Salma Dahrani",
     violation: "Location Mismatch",
     region: "East Amman",
     date: "02 Aug 2025 - 12:32 PM",
@@ -44,7 +44,7 @@ export const usermanagement = [
     avatar: avatarTwo,
   },
   {
-    name: "Michael Reed",
+    name: "Yousef Barqani",
     violation: "Multiple Drone Disconnect",
     region: "West Amman",
     date: "03 Aug 2025 - 10:00 AM",
@@ -52,7 +52,7 @@ export const usermanagement = [
     avatar: avatarThree,
   },
   {
-    name: "Ashley Morgan",
+    name: "Noor Khandari",
     violation: "Unauthorized Device",
     region: "East Amman",
     date: "04 Aug 2025 - 8:32 AM",
@@ -60,7 +60,7 @@ export const usermanagement = [
     avatar: avatarFour,
   },
   {
-    name: "James Carter",
+    name: "Mira Al-Sayfani",
     violation: "Unauthorized Login",
     region: "West Amman",
     date: "01 Aug 2025 - 14:32 PM",
@@ -68,7 +68,7 @@ export const usermanagement = [
     avatar: avatarOne,
   },
   {
-    name: "Emily Johnson",
+    name: "Salma Dahrani",
     violation: "Unauthorized Login",
     region: "East Amman",
     date: "02 Aug 2025 - 12:32 PM",
@@ -76,7 +76,7 @@ export const usermanagement = [
     avatar: avatarTwo,
   },
   {
-    name: "Michael Reed",
+    name: "Yousef Barqani",
     violation: "Unauthorized Login",
     region: "West Amman",
     date: "03 Aug 2025 - 10:00 AM",
@@ -84,7 +84,7 @@ export const usermanagement = [
     avatar: avatarThree,
   },
   {
-    name: "Ashley Morgan",
+    name: "Noor Khandari",
     violation: "Unauthorized Login",
     region: "East Amman",
     date: "04 Aug 2025 - 8:32 AM",
@@ -92,7 +92,7 @@ export const usermanagement = [
     avatar: avatarFour,
   },
   {
-    name: "Emily Johnson",
+    name: "Salma Dahrani",
     violation: "Unauthorized Login",
     region: "West Amman",
     date: "01 Aug 2025 - 14:32 PM",

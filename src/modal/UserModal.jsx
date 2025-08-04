@@ -1,8 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import { X } from "lucide-react";
+import { successMessage } from "../data/Toast";
 
 export default function UserModal({ user, onClose }) {
   if (!user) return null;
+  const [isAssigning, setIsAssigning] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
 
   return (
     <div className="fixed inset-0 z-1005 flex items-center justify-center bg-[#10131cb7] bg-opacity-80 animate-backdrop">
@@ -65,7 +69,7 @@ export default function UserModal({ user, onClose }) {
               {/* login success */}
 
               <div className="flex items-start gap-2 relative">
-                <span className="w-2 h-2 absolute left-[-23.2px] top-2 rounded-full bg-green-500" />
+                <span className="w-2 h-2 absolute left-[-23.3px] top-2 rounded-full bg-green-500" />
                 <div>
                   <p className="text-sm font-medium text-[#FFFFFFB2]">
                     Login Success
@@ -94,11 +98,38 @@ export default function UserModal({ user, onClose }) {
           </div>
 
           <div className="w-full flex flex-col gap-2 mt-4">
-            <button className="bg-[#17202C] hover:bg-blue-900 transition-colors duration-200 text-[#FFFFFFB2] text-[13px] font-medium py-2 rounded-md w-full">
-              Assign Case Manager
+            <button
+              onClick={() => {
+                setIsAssigning(true);
+                setSuccessMsg("");
+                setTimeout(() => {
+                  setIsAssigning(false);
+                  successMessage("Case Manager Assigned Successfully!");
+                  onClose();
+                }, 2000);
+              }}
+              disabled={isAssigning}
+              className={`${
+                isAssigning ? "bg-gray-700" : "bg-[#17202C] hover:bg-blue-900"
+              } transition-colors duration-200 text-[#FFFFFFB2] text-[13px] font-medium py-2 rounded-md w-full`}
+            >
+              {isAssigning ? "Please wait..." : "Assign Case Manager"}
             </button>
-            <button className="border border-gray-800 text-[#FFFFFFB2] text-[13px] font-medium py-2 rounded-md w-full hover:bg-[#17202cb2] transition-colors duration-200">
-              Export Log
+
+            <button
+              className="border border-gray-800 text-[#FFFFFFB2] text-[13px] font-medium py-2 rounded-md w-full hover:bg-[#17202cb2] transition-colors duration-200"
+              onClick={() => {
+                setIsExporting(true);
+                setSuccessMsg("");
+                setTimeout(() => {
+                  setIsExporting(false);
+                  successMessage("Log Exported Successfully!");
+                  onClose();
+                }, 1500);
+              }}
+              disabled={isExporting}
+            >
+              {isExporting ? "Please wait..." : "Export Log"}
             </button>
           </div>
         </div>
