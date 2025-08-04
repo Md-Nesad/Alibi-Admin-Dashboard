@@ -6,8 +6,8 @@ import {
   VidoeCall,
 } from "../../assets/icons/RecentAlerts";
 import { alerts } from "../../data/Data";
-import UserModal from "../../modal/UserModal";
 import { approve, message, openFolder } from "../../data/Toast";
+import RecentAlertModal from "../../modal/RecentAlertModal";
 
 export default function RecentAlerts() {
   const [selectedUser, setSelectedUser] = useState(null);
@@ -41,7 +41,7 @@ export default function RecentAlerts() {
                   <td className="px-3 py-1 border-r border-gray-800 ">
                     <div
                       onClick={() => setSelectedUser(alert)}
-                      className="flex items-center gap-2 cursor-pointer "
+                      className="flex items-center gap-2 2xl:gap-3 cursor-pointer "
                     >
                       <img
                         src={alert.avatar}
@@ -91,7 +91,7 @@ export default function RecentAlerts() {
 
               {/* Modal */}
               {selectedUser && (
-                <UserModal
+                <RecentAlertModal
                   user={selectedUser}
                   onClose={() => setSelectedUser(null)}
                 />

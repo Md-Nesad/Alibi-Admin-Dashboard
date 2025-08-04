@@ -17,10 +17,10 @@ const Analysis = lazy(() => import("./pages/Analysis"));
 // Loading UI Component
 function LoadingScreen() {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white animate-fade">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 animate-fade">
       <div className="text-center">
         <div className="loader mb-2"></div>
-        <p className="text-gray-600">Loading...</p>
+        <p className="text-white text-2xl">Loading...</p>
       </div>
     </div>
   );
