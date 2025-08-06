@@ -66,13 +66,13 @@ export default function UserModal({ user, onClose }) {
                 </div>
               </div>
 
-              {/* login success */}
+              {/* Check-In Success */}
 
               <div className="flex items-start gap-2 relative">
                 <span className="w-2 h-2 absolute left-[-23.3px] top-2 rounded-full bg-green-500" />
                 <div>
                   <p className="text-sm font-medium text-[#FFFFFFB2]">
-                    Login Success
+                    Check-In Success
                   </p>
                   <p className="text-[11px] text-[#FFFFFF66]">
                     Timestamped, Today: 12:35 PM
@@ -84,54 +84,95 @@ export default function UserModal({ user, onClose }) {
         </div>
 
         {/* Note & Actions */}
-        <div className="mt-1">
+
+        <div className="mt-1 mb-6">
           <h3 className="font-medium mb-1 text-[#FFFFFFB2]">Note</h3>
-          <div className="mt-2 w-full bg-[#141821] text-sm text-gray-300 p-3 rounded-md border border-gray-800">
-            <p className=" text-justify text-[#ffffffb8] text-[13px] ">
-              At 12:55 PM today, the system flagged a location-based violation
-              involving the user. This marks the second such incident reported
-              within the past seven days. Prior to the violation, a suspicious
-              vibration pattern was detected at 12:35 PM, which may be relevant
-              to the alert. The user has previously been warned following an
-              unauthorized login attempt earlier this week.
+          <div className="mt-2 w-full h-40 overflow-y-scroll overflow-x-hidden bg-[#141821] text-sm text-gray-300 p-3 pb-6 rounded-md border border-gray-800 custom-scrollbar scroll-smooth">
+            <p className="text-justify text-[#ffffffb8] text-[14px] leading-relaxed space-y-2">
+              🚨 <strong>AI Alert:</strong> Repeated Geo-Fence Violation
+              <br />
+              <strong>Subject ID:</strong> #A-672493
+              <br />
+              <strong>Timestamp:</strong> August 4, 2025 – 18:42 GMT+3
+              <br />
+              <strong>Severity Level:</strong> 🔴 High Risk – Escalation
+              Recommended
+              <br />
+              <strong>Subject:</strong> Malik R. (DOB: 1991-03-07)
+              <br />
+              <strong>Supervision Level:</strong> Moderate Risk – House Arrest
+              <br /> <br />
+              <strong>Geo-Fence Radius:</strong> 200m
+              <br />
+              <strong>Current Incident:</strong>
+              <br />
+              At 18:39, subject exited the designated geo-fence zone by
+              approximately 317 meters, traveling southeast toward{" "}
+              <em>[Al-Madina Commercial District]</em> without authorized
+              movement request.
+              <br />
+              AI-predicted intent pattern suggests possible deviation for
+              unauthorized commercial or social activity based on prior ML
+              trajectory analysis.
+              <br />
+              <br />
+              <strong>Historical Pattern (Last 7 Days):</strong>
+              <br />
+              • July 30, 2025 – 22:06: Geo-fence breach (124 meters) – proximity
+              to restricted zone flagged.
+              <br />
+              • August 1, 2025 – 03:17: Late-night boundary exit (276 meters) –
+              unreported duration of 47 minutes.
+              <br />
+              <br />
+              <strong>System Confidence Score:</strong> 92.4% (Intentional
+              breach pattern)
+              <br />
+              <br />
+              <strong>Recommended Action:</strong>
+              <br />
+              • Immediate biometric check-in (FaceID, voice sample) – Pending
+              <br />
+              • Deploy drone patrol within 0.5 km radius – Queued
+              <br />• Notify supervising officer – Sent
             </p>
           </div>
+        </div>
 
-          <div className="w-full flex flex-col gap-2 mt-4">
-            <button
-              onClick={() => {
-                setIsAssigning(true);
-                setSuccessMsg("");
-                setTimeout(() => {
-                  setIsAssigning(false);
-                  successMessage("Case Manager Assigned Successfully!");
-                  onClose();
-                }, 2000);
-              }}
-              disabled={isAssigning}
-              className={`${
-                isAssigning ? "bg-gray-700" : "bg-[#17202C] hover:bg-blue-900"
-              } transition-colors duration-200 text-[#FFFFFFB2] text-[13px] font-medium py-2 rounded-md w-full`}
-            >
-              {isAssigning ? "Please wait..." : "Assign Case Manager"}
-            </button>
+        <div className="w-full flex flex-col gap-2 mt-4">
+          <button
+            onClick={() => {
+              setIsAssigning(true);
+              setSuccessMsg("");
+              setTimeout(() => {
+                setIsAssigning(false);
+                successMessage("Case Manager Assigned Successfully!");
+                onClose();
+              }, 2000);
+            }}
+            disabled={isAssigning}
+            className={`${
+              isAssigning ? "bg-gray-700" : "bg-[#17202C] hover:bg-blue-900"
+            } transition-colors duration-200 text-[#FFFFFFB2] text-[13px] font-medium py-2 rounded-md w-full`}
+          >
+            {isAssigning ? "Please wait..." : "Assign Case Manager"}
+          </button>
 
-            <button
-              className="border border-gray-800 text-[#FFFFFFB2] text-[13px] font-medium py-2 rounded-md w-full hover:bg-[#17202cb2] transition-colors duration-200"
-              onClick={() => {
-                setIsExporting(true);
-                setSuccessMsg("");
-                setTimeout(() => {
-                  setIsExporting(false);
-                  successMessage("Log Exported Successfully!");
-                  onClose();
-                }, 1500);
-              }}
-              disabled={isExporting}
-            >
-              {isExporting ? "Please wait..." : "Export Log"}
-            </button>
-          </div>
+          <button
+            className="border border-gray-800 text-[#FFFFFFB2] text-[13px] font-medium py-2 rounded-md w-full hover:bg-[#17202cb2] transition-colors duration-200"
+            onClick={() => {
+              setIsExporting(true);
+              setSuccessMsg("");
+              setTimeout(() => {
+                setIsExporting(false);
+                successMessage("Log Exported Successfully!");
+                onClose();
+              }, 1500);
+            }}
+            disabled={isExporting}
+          >
+            {isExporting ? "Please wait..." : "Export Log"}
+          </button>
         </div>
       </div>
     </div>

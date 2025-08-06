@@ -29,13 +29,13 @@ const RecentAlertModal = ({ user, onClose }) => {
         {/* Fields */}
         <div className="grid grid-cols-2 gap-3 text-sm">
           <Field label="Name" value={user.name} />
-          <Field label="Role" value="Drone Operator" />
-          <Field label="Status" value="Active" />
+          <Field label="Role" value="User" />
+          <Field label="Status" value="Failed Check-In" />
           <Field label="User ID" value="DRN-02568" />
-          <Field label="Alert Type" value={user.description} />
+          <Field label="Alert Type" value="Failed Check-In" />
           <Field label="Date & Time" value="01 Aug 2025, 14:32 PM" />
           <Field label="Location" value="3rd Circle, Amman, Jordan" />
-          <Field label="Device ID" value="DRONE-X342" />
+          <Field label="Device ID" value="XAI2025" />
           <Field label="Last Login" value="01 Aug 2025, 14:25 PM" />
           <Field label="Last Location" value="2nd Circle, Amman, Jordan" />
           <Field label="Total Alerts (Last 30 Days)" value="4" />

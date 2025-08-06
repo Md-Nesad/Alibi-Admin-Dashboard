@@ -70,8 +70,8 @@ const DailyComplianceChart = () => {
               dy: 7,
               dx: 10,
             }}
-            axisLine={false} // removes the axis line
-            tickLine={false} // removes the tick mark (small line above label)
+            axisLine={false}
+            tickLine={false}
           />
 
           <YAxis
@@ -86,7 +86,6 @@ const DailyComplianceChart = () => {
             contentStyle={{ backgroundColor: "#1F212C", borderColor: "#333" }}
           />
 
-          {/* Area with stroke and fill */}
           <Area
             type="basis"
             dataKey="y"

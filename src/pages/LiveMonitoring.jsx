@@ -1,11 +1,14 @@
 import React from "react";
+import ActionButtons from "../components/liveMonitoring/ActionButton";
+import MonitoringTable from "../components/liveMonitoring/MonitoringTable";
+import TamperAlertCard from "../components/liveMonitoring/TamplerAlertCard";
 
 export default function LiveMonitoring() {
   return (
-    <div>
-      <h1 className="text-xl text-center mt-6">
-        This is User Live Monitoring Page. Page is under construction
-      </h1>
+    <div className="my-5">
+      <ActionButtons />
+      <MonitoringTable />
+      <TamperAlertCard />
     </div>
   );
 }

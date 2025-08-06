@@ -6,18 +6,23 @@ import {
   VidoeCall,
 } from "../../assets/icons/RecentAlerts";
 import { alerts } from "../../data/Data";
-import { approve, message, openFolder } from "../../data/Toast";
+import { approve } from "../../data/Toast";
 import RecentAlertModal from "../../modal/RecentAlertModal";
+import RecentAlertChatModal from "../../modal/RecentAlertModalChart";
+import RecentAlertVideoCallModal from "../../modal/RecentAlertVideoCallModal";
+import UserModal from "../../modal/UserModal";
 
 export default function RecentAlerts() {
   const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedChatUser, setSelectedChatUser] = useState(null);
+  const [selectedVideoUser, setSelectedVideoUser] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   return (
     <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-xl w-full h-[285px] shadow-md border border-gray-800">
       <h2 className="text-xl font-medium py-3 pl-6 border-b border-[#334155]">
         Recent Alerts
       </h2>
-
       <div className="overflow-x-auto py-4 px-3 h-[250px]">
         <div className="rounded-lg border border-gray-800 overflow-hidden">
           <table className="min-w-full text-xs bg-[#0F131C]">
@@ -38,10 +43,10 @@ export default function RecentAlerts() {
                   key={index}
                   className="hover:bg-[#1e293b]/60 transition border-t border-gray-800"
                 >
-                  <td className="px-3 py-1 border-r border-gray-800 ">
+                  <td className="px-3 py-1 border-r border-gray-800">
                     <div
                       onClick={() => setSelectedUser(alert)}
-                      className="flex items-center gap-2 2xl:gap-3 cursor-pointer "
+                      className="flex items-center gap-2 2xl:gap-3 cursor-pointer"
                     >
                       <img
                         src={alert.avatar}
@@ -56,31 +61,24 @@ export default function RecentAlerts() {
                   </td>
                   <td className="px-3 py-1">
                     <div className="flex gap-2 2xl:gap-5 2xl:justify-center">
-                      <button
-                        title="Approve"
-                        className="hover:scale-105 transition-transform duration-150 cursor-pointer focus:outline-none"
-                        onClick={approve}
-                      >
+                      <button title="Approve" onClick={approve}>
                         <Approve className="text-green-500 w-5 h-5" />
                       </button>
                       <button
-                        title="open file"
-                        className="hover:scale-105 transition-transform duration-150 cursor-pointer focus:outline-none"
-                        onClick={openFolder}
+                        onClick={() => setSelectedFile(alert)}
+                        title="Open File"
                       >
                         <File className="text-purple-500 w-5 h-5" />
                       </button>
                       <button
                         title="Message"
-                        className="hover:scale-105 transition-transform duration-150 cursor-pointer focus:outline-none"
-                        onClick={message}
+                        onClick={() => setSelectedChatUser(alert)}
                       >
                         <Message className="text-yellow-400 w-5 h-5" />
                       </button>
-
                       <button
-                        title="vidoe call "
-                        className="hover:scale-105 transition-transform duration-150 cursor-pointer focus:outline-none"
+                        title="Video Call"
+                        onClick={() => setSelectedVideoUser(alert)}
                       >
                         <VidoeCall className="text-yellow-400 w-5 h-5" />
                       </button>
@@ -88,18 +86,35 @@ export default function RecentAlerts() {
                   </td>
                 </tr>
               ))}
-
-              {/* Modal */}
-              {selectedUser && (
-                <RecentAlertModal
-                  user={selectedUser}
-                  onClose={() => setSelectedUser(null)}
-                />
-              )}
             </tbody>
           </table>
         </div>
       </div>
+      {/* User Info Modal */}
+      {selectedUser && (
+        <RecentAlertModal
+          user={selectedUser}
+          onClose={() => setSelectedUser(null)}
+        />
+      )}
+      {/* 💬 Chat Modal */}
+      {selectedChatUser && (
+        <RecentAlertChatModal
+          user={selectedChatUser}
+          onClose={() => setSelectedChatUser(null)}
+        />
+      )}
+      {/* video model */}
+      {selectedVideoUser && (
+        <RecentAlertVideoCallModal
+          user={selectedVideoUser}
+          onClose={() => setSelectedVideoUser(null)}
+        />
+      )}
+      {/* File Modal */}
+      {selectedFile && (
+        <UserModal user={selectedFile} onClose={() => setSelectedFile(null)} />
+      )}
     </div>
   );
 }

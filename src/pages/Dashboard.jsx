@@ -1,10 +1,5 @@
 import React from "react";
 import { Outlet, NavLink, useLocation } from "react-router-dom";
-import { MdCancel } from "react-icons/md";
-import { GoPeople } from "react-icons/go";
-import { PiHandSwipeLeft } from "react-icons/pi";
-import { FaUserTie, FaRegCalendarCheck } from "react-icons/fa6";
-import { HousePlug } from "lucide-react";
 import DashboardMenu from "../components/navbar";
 import {
   AI,
@@ -15,6 +10,7 @@ import {
   User,
   UserInterection,
 } from "../assets/icons/Overview";
+import { SettingsIcon } from "lucide-react";
 
 const Dashboard = () => {
   const location = useLocation();
@@ -62,8 +58,8 @@ const Dashboard = () => {
       <DashboardMenu />
       {/* Sidebar */}
       <aside className="w-65 h-screen pt-20 bg-[#17202C] text-white shadow-sm fixed top-0 left-0 z-10">
-        <div className="h-full overflow-y-auto py-4">
-          <nav className="flex flex-col">
+        <div className="h-full overflow-y-auto py-4 ">
+          <nav className="flex flex-col border-b-2 border-gray-700">
             {sidebarLinks.map(({ name, path, icon }) => (
               <NavLink
                 key={path}
@@ -81,6 +77,10 @@ const Dashboard = () => {
               </NavLink>
             ))}
           </nav>
+          <div className="flex items-center gap-4 py-1 mt-6 mx-3 text-sm font-medium rounded-lg transition-all hover:bg-[#f2b100ef] cursor-pointer ">
+            <SettingsIcon className="w-5 h-5 mx-3 my-2 text-white" />
+            <button className="text-white">System Settings</button>
+          </div>
         </div>
       </aside>
 
