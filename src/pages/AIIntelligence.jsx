@@ -12,7 +12,7 @@ export default function AIIntelligence() {
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       {/* Main content layout */}
-      <div className="flex gap-20 mt-4 2xl:gap-30">
+      <div className="flex gap-20 mt-4 2xl:gap-23">
         {/* Sidebar */}
         <aside className="w-61 pr-4">
           <MatchesList searchTerm={searchTerm} />
