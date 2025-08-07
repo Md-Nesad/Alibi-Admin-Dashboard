@@ -148,7 +148,7 @@ export default function UserModal({ user, onClose }) {
                 setIsAssigning(false);
                 successMessage("Case Manager Assigned Successfully!");
                 onClose();
-              }, 2000);
+              }, 1500);
             }}
             disabled={isAssigning}
             className={`${

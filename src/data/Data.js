@@ -45,6 +45,8 @@ export const usermanagement = [
     date: "01 Aug 2025 - 14:32 PM",
     risk: 85,
     avatar: avatarOne,
+    location: { lat: 31.9632, lng: 35.998 },
+    type: "low",
   },
   {
     id: 2,
@@ -54,6 +56,8 @@ export const usermanagement = [
     date: "02 Aug 2025 - 12:32 PM",
     risk: 75,
     avatar: avatarTwo,
+    location: { lat: 31.9655, lng: 35.928 },
+    type: "high",
   },
   {
     id: 3,
@@ -63,6 +67,8 @@ export const usermanagement = [
     date: "03 Aug 2025 - 10:00 AM",
     risk: 60,
     avatar: avatarThree,
+    location: { lat: 31.9902, lng: 35.9 },
+    type: "medium",
   },
   {
     id: 4,
@@ -72,6 +78,8 @@ export const usermanagement = [
     date: "04 Aug 2025 - 8:32 AM",
     risk: 85,
     avatar: avatarFour,
+    location: { lat: 32.005, lng: 35.928 }, // far north-east
+    type: "low",
   },
   {
     id: 5,
@@ -80,7 +88,9 @@ export const usermanagement = [
     region: "West Amman",
     date: "01 Aug 2025 - 14:32 PM",
     risk: 95,
-    avatar: avatarFive,
+    avatar: avatarFives,
+    location: { lat: 31.9412, lng: 35.884 }, // far south-west
+    type: "high",
   },
   {
     id: 6,
@@ -89,7 +99,9 @@ export const usermanagement = [
     region: "East Amman",
     date: "02 Aug 2025 - 12:32 PM",
     risk: 85,
-    avatar: avatarSix,
+    avatar: avatarSixs,
+    location: { lat: 31.99, lng: 36 }, // farther east
+    type: "medium",
   },
   {
     id: 7,
@@ -98,7 +110,9 @@ export const usermanagement = [
     region: "West Amman",
     date: "03 Aug 2025 - 10:00 AM",
     risk: 45,
-    avatar: avatarSeven,
+    avatar: avatarSevens,
+    location: { lat: 31.9298, lng: 35.9403 }, // mid-south
+    type: "low",
   },
   {
     id: 8,
@@ -107,7 +121,9 @@ export const usermanagement = [
     region: "East Amman",
     date: "04 Aug 2025 - 8:32 AM",
     risk: 85,
-    avatar: avatarEight,
+    avatar: avatarEights,
+    location: { lat: 31.9815, lng: 35.9522 }, // mid-north
+    type: "high",
   },
   {
     id: 9,
@@ -116,7 +132,9 @@ export const usermanagement = [
     region: "West Amman",
     date: "01 Aug 2025 - 14:32 PM",
     risk: 30,
-    avatar: avatarNine,
+    avatar: avatarNines,
+    location: { lat: 31.935, lng: 35.977 }, // southeast
+    type: "medium",
   },
 ];
 
@@ -261,5 +279,51 @@ export const liveMonitoringData = [
     location: "Downtown Amman, Amman Governorate, Jordan",
     status: "On-Time",
     avatar: avatarSeven,
+  },
+];
+
+export const users = [
+  {
+    name: "Mira Al-Sayfani",
+    time: "Apr 2, 2025, 10:35 am",
+    location: "United States",
+    score: "85%",
+    image: avatarOne,
+    showButtons: true,
+  },
+  {
+    name: "Salma Dahrani",
+    time: "Apr 2, 2025, 10:35 am",
+    location: "United States",
+    score: "85%",
+    image: avatarTwo,
+  },
+  {
+    name: "Yousef Barqani",
+    time: "Apr 2, 2025, 10:35 am",
+    location: "United States",
+    score: "85%",
+    image: avatarThree,
+  },
+  {
+    name: "Noor Khandari",
+    time: "Apr 2, 2025, 10:35 am",
+    location: "United States",
+    score: "85%",
+    image: avatarFour,
+  },
+  {
+    name: "Lina Al-Mahrouqi",
+    time: "Apr 2, 2025, 10:35 am",
+    location: "United States",
+    score: "85%",
+    image: avatarFives,
+  },
+  {
+    name: "Khaled Nabeelzar",
+    time: "Apr 2, 2025, 10:35 am",
+    location: "United States",
+    score: "85%",
+    image: avatarSixs,
   },
 ];

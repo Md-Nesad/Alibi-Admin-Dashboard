@@ -3,9 +3,18 @@ import logotwo from "../../assets/images/alibiLogo.jpg";
 import adminImage from "../../assets/images/Ellipse 9 (5).png";
 import { Search, Bell } from "lucide-react";
 import { useState } from "react";
+import EditProfileModal from "../../modal/EditProfile";
+import NotificationModal from "../../modal/Notification";
 
 const DashboardMenu = () => {
   const [open, setOpen] = useState(false);
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+
+  const handleEditProfileClose = () => {
+    setIsEditOpen(false);
+    setOpen(false);
+  };
 
   return (
     <header className="w-full bg-[#000000] shadow-sm border-b border-gray-700 fixed top-0 z-1005">
@@ -44,15 +53,18 @@ const DashboardMenu = () => {
           {/* Notification & Profile */}
           <div className="flex items-center gap-4">
             {/* Notification */}
-            <div
+            <button
+              onClick={() => setIsNotificationOpen(!isNotificationOpen)}
               title="Notification"
-              className="relative p-3 rounded-full bg-[#17202C]"
+              className={`relative p-3 rounded-full bg-[#17202C] ${
+                isNotificationOpen ? "cursor-default" : "cursor-pointer"
+              }`}
             >
               <Bell className="text-white" size={24} />
               <span className="absolute top-2 right-2 min-w-[16px] h-4 px-1 text-[8px] flex items-center justify-center rounded-full bg-red-500 text-black ring-2 ring-[#17202C]">
-                1
+                6
               </span>
-            </div>
+            </button>
 
             {/* Profile */}
             <div className="relative">
@@ -83,24 +95,28 @@ const DashboardMenu = () => {
 
               {open && (
                 <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg text-black z-10">
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => setIsEditOpen(true)}
                     className="block px-4 py-2 hover:bg-gray-100 hover:rounded-md"
                   >
                     Profile
-                  </a>
-                  <a
-                    href="#"
+                  </button>
+                  <Link
+                    to="/login"
                     className="block px-4 py-2 hover:bg-gray-100 hover:rounded-md"
                   >
                     Logout
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
           </div>
         </div>
       </div>
+      {isEditOpen && <EditProfileModal onClose={handleEditProfileClose} />}
+      {isNotificationOpen && (
+        <NotificationModal onClose={() => setIsNotificationOpen(false)} />
+      )}
     </header>
   );
 };

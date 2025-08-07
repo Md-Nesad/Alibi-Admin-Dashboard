@@ -1,5 +1,4 @@
 import { FaUsers, FaExclamationTriangle } from "react-icons/fa";
-import Drone from "../../assets/icons/Drone";
 import Setting from "../../assets/icons/Setting";
 import { Link } from "react-router-dom";
 import { DroneDeployment } from "../../assets/icons/Overview";
@@ -22,7 +21,7 @@ export default function DashboardStatus() {
       <StatusCard
         icon={<FaUsers />}
         label="Active Users"
-        value="750"
+        value="09"
         path="/dashboard/user_management"
       />
       <StatusCard

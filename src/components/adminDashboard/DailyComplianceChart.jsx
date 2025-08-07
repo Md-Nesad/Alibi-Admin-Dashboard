@@ -7,6 +7,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
+import CustomTooltip from "./CustomTooltip";
 
 const data = [
   { x: 10, y: 40 },
@@ -73,7 +74,6 @@ const DailyComplianceChart = () => {
             axisLine={false}
             tickLine={false}
           />
-
           <YAxis
             strokeOpacity={0}
             domain={[25, 100]}
@@ -83,9 +83,9 @@ const DailyComplianceChart = () => {
             dy={-2}
           />
           <Tooltip
+            content={<CustomTooltip />}
             contentStyle={{ backgroundColor: "#1F212C", borderColor: "#333" }}
           />
-
           <Area
             type="basis"
             dataKey="y"
