@@ -20,7 +20,7 @@ export default function BroadcastModal({ onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 flex items-start pt-44 justify-center pl-70 bg-black/50 z-50 animate-backdrop">
+    <div className="fixed inset-0 flex items-start pt-48 justify-center pl-70 bg-black/50 z-50 animate-backdrop">
       <div className="bg-[#161a25] p-6 rounded-lg w-[400px] shadow-lg animate-modal border border-gray-700">
         <h2 className="text-xl font-semibold text-[#FFFFFFCC] mb-4 text-center">
           Send Broadcast

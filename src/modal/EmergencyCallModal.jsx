@@ -13,7 +13,7 @@ export default function EmergencyCallModal({ onClose }) {
 
   return (
     <>
-      <div className="fixed inset-0 items-start pt-44 justify-center pl-70 bg-black/70 flex  z-50 p-4 animate-backdrop">
+      <div className="fixed inset-0 items-start pt-48 justify-center pl-70 bg-black/70 flex  z-50 p-4 animate-backdrop">
         <div className="bg-[#161a25] text-[#FFFFFFCC] rounded-lg shadow-lg max-w-md w-full p-6 relative border border-gray-700 animate-modal">
           <button
             onClick={onClose}
