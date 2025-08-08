@@ -3,7 +3,7 @@ import AlertWithPopup from "./AlertWithPopu";
 
 export default function TamperAlertCard() {
   return (
-    <div className="bg-[#0F172A] border border-gray-800 rounded-md p-4 text-white w-full flex flex-col gap-4 md:grid md:grid-cols-4 md:gap-4 mb-13">
+    <div className="bg-[#0F172A] border border-gray-800 rounded-md px-4 py-2 text-white w-full flex flex-col gap-4 md:grid md:grid-cols-4 md:gap-4 mb-15">
       {/* Left icon */}
       <div className="text-yellow-400 flex items-center gap-4 border-b md:border-b-0 md:border-r border-gray-700 pb-4 md:pb-0 md:pr-6 ">
         <AlertTriangle size={44} />
@@ -11,7 +11,7 @@ export default function TamperAlertCard() {
       </div>
 
       {/* Info section */}
-      <div className="flex flex-row gap-9 items-center 2xl:gap-60 md:col-span-2">
+      <div className="flex flex-row gap-8 items-center 2xl:gap-60 md:col-span-2">
         <div>
           <div>
             <span className="text-white font-medium">Name:</span> Mira Al-Sayari

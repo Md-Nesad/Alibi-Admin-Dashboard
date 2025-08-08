@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import "./App.css";
+import Setting from "./pages/Setting";
 
 // Lazy-loaded pages
 const Login = lazy(() => import("./pages/Login"));
@@ -42,6 +43,7 @@ function App() {
             <Route path="user_interection" element={<UserInterection />} />
             <Route path="drone_deployee" element={<DroneDeploye />} />
             <Route path="analysis" element={<Analysis />} />
+            <Route path="setting" element={<Setting />} />
           </Route>
         </Routes>
       </Suspense>

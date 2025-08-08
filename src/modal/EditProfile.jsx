@@ -95,7 +95,7 @@ const EditProfileModal = ({ onClose }) => {
 
         {/* Submit Button */}
         <button
-          className="w-full bg-[#17202C] py-2 px-4 border border-gray-700 rounded hover:bg-[#1f2a38]"
+          className="w-full bg-[#17202C] py-2 px-4 border text-[#FFFFFFCC] border-gray-700 rounded hover:bg-[#1f2a38]"
           onClick={handleSubmit}
         >
           {loading ? "updating..." : "Edit Profile"}

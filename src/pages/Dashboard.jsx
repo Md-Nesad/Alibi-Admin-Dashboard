@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, NavLink, useLocation } from "react-router-dom";
+import { Outlet, NavLink, useLocation, Link } from "react-router-dom";
 import DashboardMenu from "../components/navbar";
 import {
   AI,
@@ -14,7 +14,6 @@ import { SettingsIcon } from "lucide-react";
 
 const Dashboard = () => {
   const location = useLocation();
-
   const sidebarLinks = [
     {
       name: "Admin Dashboard",
@@ -77,10 +76,18 @@ const Dashboard = () => {
               </NavLink>
             ))}
           </nav>
-          <div className="flex items-center gap-4 py-1 mt-6 mx-3 text-sm font-medium rounded-lg transition-all hover:bg-[#f2b100ef] cursor-pointer ">
-            <SettingsIcon className="w-5 h-5 mx-3 my-2 text-white" />
-            <button className="text-white">System Settings</button>
-          </div>
+          <Link to="setting">
+            <div
+              className={`flex items-center gap-4 py-1 mt-6 mx-3 text-sm font-medium rounded-lg transition-all hover:bg-[#f2b100ef] cursor-pointer ${
+                location.pathname === "/dashboard/setting"
+                  ? "bg-[#f2b100ef]"
+                  : ""
+              }`}
+            >
+              <SettingsIcon className="w-5 h-5 mx-3 my-2 text-white" />
+              <button className="text-white">System Settings</button>
+            </div>
+          </Link>
         </div>
       </aside>
 

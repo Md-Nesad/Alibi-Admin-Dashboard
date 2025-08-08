@@ -13,14 +13,14 @@ export default function AIIntelligence() {
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       {/* Main content layout */}
-      <div className="flex flex-1 gap-4 mt-4 overflow-hidden">
+      <div className="flex flex-1 gap-6 2xl:gap-10 mt-3 overflow-hidden">
         {/* Sidebar */}
         <aside className="">
           <MatchesList searchTerm={searchTerm} />
         </aside>
 
         {/* Main content */}
-        <main className="flex flex-1 gap-4">
+        <main className="flex flex-1 gap-4 2xl:gap-9">
           <div className="flex-1">
             <AnomalyCard />
           </div>

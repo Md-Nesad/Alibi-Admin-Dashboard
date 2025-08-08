@@ -51,7 +51,7 @@ const MonitoringTable = () => {
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="w-full bg-[#090c12] border border-[#334155] rounded-md py-2 pl-4 pr-10 text-sm text-[#FFFFFFCC] focus:outline-none appearance-none"
+              className="w-full bg-[#090c12] border cursor-pointer hover:bg-gray-700 border-[#334155] rounded-md py-2 pl-4 pr-10 text-sm text-[#FFFFFFCC] focus:outline-none appearance-none"
             >
               {["All", "On-Time", "Late", "Failed"].map((item) => (
                 <option key={item} value={item}>

@@ -225,7 +225,7 @@ export const modalData = [
 export const liveMonitoringData = [
   {
     name: "Mira Al-Sayfani",
-    idNumber: "EMP-102",
+    idNumber: "EMP-1",
     checkIn: "01 Aug 2025 – 14:32 PM",
     location: "Amman, Amman Governorate, Jordan",
     status: "On-Time",
@@ -233,7 +233,7 @@ export const liveMonitoringData = [
   },
   {
     name: "Salma Dahrani",
-    idNumber: "EMP-102",
+    idNumber: "EMP-2",
     checkIn: "02 Aug 2025 – 12:32 PM",
     location: "Al Balad (Downtown Amman), Amman Governorate, Jordan",
     status: "Late",
@@ -241,7 +241,7 @@ export const liveMonitoringData = [
   },
   {
     name: "Yousef Barqani",
-    idNumber: "EMP-102",
+    idNumber: "EMP-3",
     checkIn: "03 Aug 2025 – 10:00 AM",
     location: "Abdali district, Amman Governorate, Jordan",
     status: "Failed",
@@ -249,7 +249,7 @@ export const liveMonitoringData = [
   },
   {
     name: "Noor Khandari",
-    idNumber: "EMP-102",
+    idNumber: "EMP-4",
     checkIn: "04 Aug 2025 – 08:32 AM",
     location:
       "12 King Faisal Street, Downtown Amman, Amman Governorate, Jordan",
@@ -258,7 +258,7 @@ export const liveMonitoringData = [
   },
   {
     name: "Lina Al-Mahrouqi",
-    idNumber: "EMP-102",
+    idNumber: "EMP-5",
     checkIn: "01 Aug 2025 – 14:32 PM",
     location: "Jabal Amman, Amman Governorate, Jordan",
     status: "Late",
@@ -266,7 +266,7 @@ export const liveMonitoringData = [
   },
   {
     name: "Khaled Nabeelzar",
-    idNumber: "EMP-102",
+    idNumber: "EMP-6",
     checkIn: "02 Aug 2025 – 12:32 PM",
     location: "Amman Citadel, Downtown Amman, Amman Governorate, Jordan",
     status: "Failed",
@@ -274,7 +274,7 @@ export const liveMonitoringData = [
   },
   {
     name: "Dalia Farhouni",
-    idNumber: "EMP-102",
+    idNumber: "EMP-7",
     checkIn: "03 Aug 2025 – 10:00 AM",
     location: "Downtown Amman, Amman Governorate, Jordan",
     status: "On-Time",

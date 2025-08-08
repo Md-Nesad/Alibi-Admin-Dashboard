@@ -22,7 +22,7 @@ const MatchesList = ({ searchTerm }) => {
   );
 
   return (
-    <div className="bg-[#12151C] text-white w-full sm:w-[260px] rounded-xl space-y-1 overflow-y-auto h-[600px] 2xl:h-[700px] mb-6 custom-scrollbar">
+    <div className="bg-[#12151C] text-[#FFFFFFCC] w-full sm:w-[260px] rounded-xl space-y-1 overflow-y-auto h-[700px] matches-list mb-6 custom-scrollbar">
       {filteredUsers.length > 0 ? (
         filteredUsers.map((user, index) => {
           const isActive = index === activeIndex;

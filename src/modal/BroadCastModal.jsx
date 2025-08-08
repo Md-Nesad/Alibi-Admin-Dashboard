@@ -22,7 +22,7 @@ export default function BroadcastModal({ onClose }) {
   return (
     <div className="fixed inset-0 flex items-start pt-44 justify-center pl-70 bg-black/50 z-50 animate-backdrop">
       <div className="bg-[#161a25] p-6 rounded-lg w-[400px] shadow-lg animate-modal border border-gray-700">
-        <h2 className="text-xl font-semibold text-white mb-4 text-center">
+        <h2 className="text-xl font-semibold text-[#FFFFFFCC] mb-4 text-center">
           Send Broadcast
         </h2>
 
@@ -33,10 +33,14 @@ export default function BroadcastModal({ onClose }) {
             <select
               value={selectedOption}
               onChange={(e) => setSelectedOption(e.target.value)}
-              className="w-full p-2 mb-4 rounded bg-[#1e293b] text-white border border-gray-600 appearance-none cursor-pointer"
+              className="w-full p-2 mb-4 rounded bg-[#1e293b] text-[#FFFFFFCC] border border-gray-600 appearance-none cursor-pointer"
             >
               {users.map((user) => (
-                <option key={user.id} value={user.name}>
+                <option
+                  className="text-[#FFFFFFCC]"
+                  key={user.id}
+                  value={user.name}
+                >
                   {user.name}
                 </option>
               ))}
@@ -58,13 +62,13 @@ export default function BroadcastModal({ onClose }) {
         <div className="flex justify-end gap-3 mt-4">
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-[#FF0000B2] text-white rounded hover:bg-[#ff000051] transition-colors duration-200"
+            className="px-4 py-2 bg-[#f2000036] hover:bg-[#f200005c] text-white rounded  transition-colors duration-200"
           >
             Cancel
           </button>
           <button
             onClick={handleSend}
-            className="px-4 py-2 bg-[#00bc005e] text-white rounded hover:bg-[#00bc00ba] disabled:opacity-50 transition-colors duration-200"
+            className="px-4 py-2 bg-[#00bc001f] hover:bg-[#00bc0058] text-white rounded disabled:opacity-50 transition-colors duration-200"
           >
             Send
           </button>

@@ -21,7 +21,7 @@ export default function NotificationModal({ onClose }) {
         {items.map((item) => (
           <div
             key={item.id}
-            className="relative w-80 bg-[#10141D] text-white px-4 py-4 border-b border-gray-700 shadow-lg animate-modal hover:bg-gray-700 cursor-default"
+            className="relative w-80 bg-[#10141D] text-[#FFFFFFE5] px-4 py-4 border-b border-gray-700 shadow-lg animate-modal hover:bg-gray-800 cursor-default"
           >
             {/* Close Button */}
             <button

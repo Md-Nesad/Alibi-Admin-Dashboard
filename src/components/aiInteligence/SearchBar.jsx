@@ -4,7 +4,7 @@ export default function SearchBar({ searchTerm, setSearchTerm }) {
   return (
     <nav className="bg-[#12151C] my-6 p-4 rounded-lg shadow-md border border-gray-800">
       <div className="flex items-center">
-        <h2 className="text-lg pl-5 pr-10 font-medium">
+        <h2 className="text-lg pl-5 pr-10 font-medium text-[#FFFFFFCC]">
           AI Intelligence Center
         </h2>
         <div className="flex w-[200px]">
