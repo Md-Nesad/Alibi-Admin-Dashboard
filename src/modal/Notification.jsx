@@ -16,12 +16,12 @@ export default function NotificationModal({ onClose }) {
     >
       <div
         className="flex flex-col max-h-[90vh] overflow-y-auto rounded-md"
-        onClick={(e) => e.stopPropagation()} // ✅ Prevent close when clicking inside
+        onClick={(e) => e.stopPropagation()}
       >
         {items.map((item) => (
           <div
             key={item.id}
-            className="relative w-80 bg-[#10141D] text-white p-4 border border-gray-700 shadow-lg animate-modal "
+            className="relative w-80 bg-[#10141D] text-white px-4 py-4 border-b border-gray-700 shadow-lg animate-modal hover:bg-gray-700 cursor-default"
           >
             {/* Close Button */}
             <button
@@ -32,10 +32,10 @@ export default function NotificationModal({ onClose }) {
             </button>
 
             {/* Notification Content */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 ">
               <Bell size={20} className="text-white mt-1" />
               <div>
-                <div className="flex gap-4 justify-between items-center">
+                <div className="flex gap-4 justify-between items-center ">
                   <p className="font-semibold text-sm">{item.title}</p>
                   <p className="text-[11px] text-gray-400">{item.time}</p>
                 </div>

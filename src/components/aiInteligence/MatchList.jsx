@@ -22,12 +22,11 @@ const MatchesList = ({ searchTerm }) => {
   );
 
   return (
-    <div className="bg-[#12151C] text-white w-[300px] rounded-xl space-y-1 overflow-y-auto h-[600px] 2xl:h-[700px] mb-6 custom-scrollbar">
+    <div className="bg-[#12151C] text-white w-full sm:w-[260px] rounded-xl space-y-1 overflow-y-auto h-[600px] 2xl:h-[700px] mb-6 custom-scrollbar">
       {filteredUsers.length > 0 ? (
         filteredUsers.map((user, index) => {
           const isActive = index === activeIndex;
           const decision = decisions[index];
-
           return (
             <div
               key={index}
@@ -60,9 +59,9 @@ const MatchesList = ({ searchTerm }) => {
               {isActive && (
                 <>
                   {!decision ? (
-                    <div className="flex gap-2">
+                    <div className="flex gap-3">
                       <button
-                        className="bg-[#00bc001f] hover:bg-[#00bc0058] transition-colors duration-200 text-[#00BC00] py-1 px-4 rounded border border-gray-700"
+                        className="bg-[#00bc001f] hover:bg-[#00bc0058] transition-colors duration-200 text-[#00BC00] py-1 px-7 rounded border border-gray-700"
                         onClick={(e) => {
                           e.stopPropagation();
                           handleDecision(index, "accepted");
@@ -71,7 +70,7 @@ const MatchesList = ({ searchTerm }) => {
                         Accept
                       </button>
                       <button
-                        className="bg-[#f2000036] hover:bg-[#f200005c] transition-colors duration-200 text-[#F20000B2] border border-gray-700 py-1 px-4 rounded"
+                        className="bg-[#f2000036] hover:bg-[#f200005c] transition-colors duration-200 text-[#F20000B2] border border-gray-700 py-1 px-7 rounded"
                         onClick={(e) => {
                           e.stopPropagation();
                           handleDecision(index, "rejected");

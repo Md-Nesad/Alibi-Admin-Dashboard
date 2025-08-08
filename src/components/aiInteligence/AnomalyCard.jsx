@@ -2,7 +2,7 @@ import { anomalies } from "../../data/AnomalyAndAISuggestion";
 
 const AnomalyCard = () => {
   return (
-    <div className="w-[353px] 2xl:w-[500px] h-93 bg-[#0f172a] text-white rounded-t-lg py-4 space-y-4 font-sans">
+    <div className="w-full bg-[#0f172a] h-93 text-white rounded-t-lg py-4 space-y-4 font-sans">
       <h2 className="text-lg font-semibold px-4 border-b border-gray-800 pb-3">
         Anomaly Detection
       </h2>
@@ -10,7 +10,7 @@ const AnomalyCard = () => {
       {anomalies.map((item, index) => (
         <div
           key={index}
-          className=" border-b border-gray-800 text-sm relative space-y-2 pb-3"
+          className="border-b border-gray-800 text-sm relative space-y-2 pb-3"
         >
           <span className="absolute top-3 right-6 text-xs text-gray-400">
             {item.time}

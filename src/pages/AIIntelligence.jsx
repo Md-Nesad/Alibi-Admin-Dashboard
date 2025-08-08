@@ -6,22 +6,27 @@ import SearchBar from "../components/aiInteligence/SearchBar";
 
 export default function AIIntelligence() {
   const [searchTerm, setSearchTerm] = useState("");
+
   return (
-    <div>
+    <div className="min-h-screen w-full flex flex-col">
       {/* Top Search Bar */}
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       {/* Main content layout */}
-      <div className="flex justify-between mt-4">
+      <div className="flex flex-1 gap-4 mt-4 overflow-hidden">
         {/* Sidebar */}
-        <aside className="w-61 pr-4 mr-20">
+        <aside className="">
           <MatchesList searchTerm={searchTerm} />
         </aside>
 
         {/* Main content */}
-        <main className="w-full flex gap-4 2xl:justify-between">
-          <AnomalyCard />
-          <AISuggestion />
+        <main className="flex flex-1 gap-4">
+          <div className="flex-1">
+            <AnomalyCard />
+          </div>
+          <div className="flex-1">
+            <AISuggestion />
+          </div>
         </main>
       </div>
     </div>

@@ -10,7 +10,6 @@ const MiniMap = ({ userLocation }) => {
   const ammanCoords = [31.9632, 35.9239];
 
   const getUserIcon = (avatar, risk, type) => {
-    const borderColor = risk >= 80 ? "red" : risk >= 50 ? "orange" : "yellow";
     const dotColor =
       type === "high" ? "red" : type === "medium" ? "orange" : "yellow";
 
@@ -22,7 +21,7 @@ const MiniMap = ({ userLocation }) => {
           height: 42px;
           border-radius: 50%;
           overflow: hidden;
-          border: 1px solid ${borderColor};
+          border: 1px solid ${dotColor};
           box-shadow: 0 0 6px rgba(0,0,0,0.4);
           background: white;
         ">
@@ -80,15 +79,15 @@ const MiniMap = ({ userLocation }) => {
       <div className="absolute bottom-4 right-4 z-[1000] bg-[#1a1a1a]/90 border border-white/10 text-[#FFFFFFCC] p-3 rounded-md text-xs shadow-md space-y-1">
         <div className="flex items-center">
           <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span> High
-          Alert / Risk
+          Alert
         </div>
         <div className="flex items-center">
           <span className="w-3 h-3 bg-orange-400 rounded-full mr-2"></span>{" "}
-          Medium Alert / Risk
+          Medium Alert
         </div>
         <div className="flex items-center">
           <span className="w-3 h-3 bg-yellow-300 rounded-full mr-2"></span> Low
-          Alert / Risk
+          Alert
         </div>
       </div>
 
