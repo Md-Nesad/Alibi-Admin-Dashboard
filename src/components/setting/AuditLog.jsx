@@ -2,7 +2,7 @@ import { logs } from "../../data/Setting";
 
 const AuditLog = () => {
   return (
-    <div className="bg-[#0f172a] pt-4 pb-2 rounded-md w-full border border-gray-800">
+    <div className="bg-[#0F131C] pt-4 pb-2 rounded-md w-full border border-gray-800">
       <h2 className="text-[#FFFFFFCC] text-lg border-b px-6 border-gray-700 pb-3 font-semibold">
         Audit Log
       </h2>

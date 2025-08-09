@@ -22,13 +22,13 @@ export default function DashboardStatus() {
         icon={<FaUsers />}
         label="Active Users"
         value="09"
-        path="/dashboard/user_management"
+        path="/dashboard/user_interection"
       />
       <StatusCard
         icon={<FaExclamationTriangle />}
         label="Flagged Violations"
         value="10"
-        path="/dashboard/user_interection"
+        path="/dashboard/user_management"
       />
       <StatusCard
         icon={<DroneDeployment />}

@@ -9,7 +9,7 @@ const DeploymentMode = () => {
   };
 
   return (
-    <div className="bg-[#0f172a] py-4 rounded-lg w-full text-[#FFFFFFCC] font-sans border border-gray-800">
+    <div className="bg-[#0F131C] py-4 rounded-lg w-full text-[#FFFFFFCC] font-sans border border-gray-800">
       {/* Title */}
       <h2 className="text-lg font-semibold pl-4 mb-4 border-b border-gray-700 pb-3">
         Deployment Mode

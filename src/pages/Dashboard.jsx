@@ -56,7 +56,7 @@ const Dashboard = () => {
     <div className="flex min-h-screen bg-black text-white">
       <DashboardMenu />
       {/* Sidebar */}
-      <aside className="w-65 h-screen pt-20 bg-[#17202C] text-white shadow-sm fixed top-0 left-0 z-10">
+      <aside className="w-65 h-screen pt-20 bg-[#10141D] text-white shadow-sm fixed top-0 left-0 z-10">
         <div className="h-full overflow-y-auto py-4 ">
           <nav className="flex flex-col border-b-2 border-gray-700">
             {sidebarLinks.map(({ name, path, icon }) => (

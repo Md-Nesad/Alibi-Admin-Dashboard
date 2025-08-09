@@ -53,7 +53,7 @@ button {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: gray;
+  background-color: rgb(58, 57, 57);
   border-radius: 4px;
 }
 
@@ -61,4 +61,13 @@ button {
   .matches-list {
     height: auto !important;
   }
+}
+
+.custom-scroll-chat {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.custom-scroll-chat::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

@@ -1,11 +1,24 @@
-import React from "react";
+import ActiveUsers from "../components/userInterection/ActiveUser";
+import ChatUI from "../components/userInterection/ChatUI";
+import Sidebar from "../components/userInterection/Sidebar";
 
 export default function UserInterection() {
   return (
-    <div>
-      <h1 className="text-xl text-center mt-6">
-        This is User Interection Page. Page is under construction
-      </h1>
+    <div className="mt-5">
+      {/* <div className="flex justify-between gap-5">
+        <div>
+          <ActiveUsers />
+        </div>
+
+        <div className="w-full">
+          <ChatUI />
+        </div>
+
+        <div>
+          <Sidebar />
+        </div>
+      </div> */}
+      <h1>This is the user interaction page. Under construction</h1>
     </div>
   );
 }

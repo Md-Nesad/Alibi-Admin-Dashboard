@@ -32,7 +32,7 @@ const RoleAssignment = () => {
   };
 
   return (
-    <div className="bg-[#0f172a] py-4 rounded-lg w-full border border-gray-800 h-[734px] mb-10 text-[#FFFFFFCC] font-sans">
+    <div className="bg-[#0F131C] py-4 rounded-lg w-full border border-gray-800 h-[630px] mb-10 text-[#FFFFFFCC] font-sans">
       <h2 className="text-lg text-[#FFFFFFCC] font-semibold pl-7 2xl:pl-13 border-b border-gray-700 pb-4">
         Role Assignment
       </h2>
@@ -42,7 +42,7 @@ const RoleAssignment = () => {
             <th className=" py-4 pl-7 text-[15px] 2xl:pl-13 text-left font-medium">
               Role
             </th>
-            <th className=" py-3 pl-24 2xl:pl-70 text-[15px] text-left font-medium">
+            <th className=" py-3 pl-44 2xl:pl-80 text-[15px] text-left font-medium">
               Permissions
             </th>
             <th className=" py-3 pl-7 text-[15px] text-left font-medium">
@@ -58,22 +58,22 @@ const RoleAssignment = () => {
                   key={permIndex}
                   className={
                     permIndex === role.permissions.length - 1
-                      ? "border-b border-gray-700 last:border-none"
+                      ? "border-b border-gray-700 pt-4 last:border-none "
                       : ""
                   }
                 >
                   {permIndex === 0 && (
                     <td
                       rowSpan={role.permissions.length}
-                      className="py-3 pl-7 2xl:pl-13 font-medium text-[#FFFFFFCC] whitespace-nowrap align-top mt-6 text-[14.5px]"
+                      className="py-3 pl-7 2xl:pl-13 font-medium text-[#FFFFFFCC] whitespace-nowrap align-top mb-6 text-[14.5px]"
                     >
                       {role.role}
                     </td>
                   )}
-                  <td className="py-3 pl-24 2xl:pl-70 text-[#FFFFFF99]">
+                  <td className="py-2 pl-44 2xl:pl-80 text-[#FFFFFF99]">
                     {perm}
                   </td>
-                  <td className="py-3 pl-10 mb-6">
+                  <td className="py-2 pl-10 mb-6">
                     <ToggleSwitch
                       enabled={permissions[role.key][permIndex]}
                       onToggle={() => togglePermission(role.key, permIndex)}

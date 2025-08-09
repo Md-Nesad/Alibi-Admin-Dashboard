@@ -1,11 +1,19 @@
-import React from "react";
+import ViolationTypeChart from "../components/analysis/ValidationTypeChart";
+import ComPailenceScore from "../components/analysis/CompailenceScore";
+import AnalysisHeading from "../components/analysis/AnalysisHeading";
+import CaseReportBuilder from "../components/analysis/CaseReportBuilder";
 
 export default function Analysis() {
   return (
     <div>
-      <h1 className="text-xl text-center mt-6">
-        This is analysis and reporting Page. Page is under construction
-      </h1>
+      <AnalysisHeading />
+
+      <div className="grid grid-cols-2 gap-5">
+        <ViolationTypeChart />
+        <ComPailenceScore />
+      </div>
+
+      <CaseReportBuilder />
     </div>
   );
 }
