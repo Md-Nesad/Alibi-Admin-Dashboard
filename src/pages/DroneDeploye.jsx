@@ -21,10 +21,9 @@ export default function DroneDeploye() {
         </div>
       </div>
 
-      <div className="mt-5 mb-10">
+      <div className="mt-5 mb-10 2xl:mt-7">
         <DroneMissionLogs />
       </div>
-     
     </div>
   );
 }

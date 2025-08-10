@@ -7,7 +7,7 @@ export const logs = [
   },
   {
     timestamp: "Aug 6, 2025 11:36 pm",
-    user: "Salma Dah rani",
+    user: "Salma Dahrani",
     action: "Updated Settings",
     ip: "192.168.1.10",
   },

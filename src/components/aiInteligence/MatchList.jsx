@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { users } from "../../data/Data";
+import { useTranslation } from "react-i18next";
 
 const MatchesList = ({ searchTerm }) => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [decisions, setDecisions] = useState({}); // Track accept/reject per user
 
@@ -44,13 +46,13 @@ const MatchesList = ({ searchTerm }) => {
                   className="w-15 h-17 rounded-md object-cover"
                 />
                 <div>
-                  <h3 className="font-semibold">{user.name}</h3>
+                  <h3 className="font-semibold">{t(user.name)}</h3>
                   <p className="text-sm text-gray-400">
-                    Match Score: {user.score}
+                    {t(user.score)}
                   </p>
-                  <p className="text-sm text-gray-400">{user.time}</p>
+                  <p className="text-sm text-gray-400">{t(user.time)}</p>
                   <p className="text-sm text-gray-400">
-                    Location: {user.location}
+                    {t(user.location)}
                   </p>
                 </div>
               </div>
@@ -61,22 +63,22 @@ const MatchesList = ({ searchTerm }) => {
                   {!decision ? (
                     <div className="flex gap-3">
                       <button
-                        className="bg-[#00bc001f] hover:bg-[#00bc0058] transition-colors duration-200 text-[#00BC00] py-1 px-7 rounded border border-gray-700"
+                        className="bg-[#00bc001f] hover:bg-[#00bc0058] transition-colors duration-200 text-[#00BC00] py-1 w-3xl rounded border border-gray-700"
                         onClick={(e) => {
                           e.stopPropagation();
                           handleDecision(index, "accepted");
                         }}
                       >
-                        Accept
+                        {t("Accept")}
                       </button>
                       <button
-                        className="bg-[#f2000036] hover:bg-[#f200005c] transition-colors duration-200 text-[#F20000B2] border border-gray-700 py-1 px-7 rounded"
+                        className="bg-[#f2000036] hover:bg-[#f200005c] transition-colors duration-200 text-[#F20000B2] border border-gray-700 py-1 w-3xl rounded"
                         onClick={(e) => {
                           e.stopPropagation();
                           handleDecision(index, "rejected");
                         }}
                       >
-                        Reject
+                        {t("Reject")}
                       </button>
                     </div>
                   ) : (

@@ -1,27 +1,27 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { useTranslation } from "react-i18next";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const ViolationTypeChart = () => {
+  const { t } = useTranslation();
+
+  // Use translation keys here
+  const labels = [t("Security"), t("FollowUp"), t("Other"), t("Safety")];
+
   const data = {
-    labels: ["Security", "Follow Up", "Other", "Safety"],
+    labels,
     datasets: [
       {
         data: [25, 10, 10, 55],
-        backgroundColor: [
-          "#7275F1", // Security (Purple)
-          "#988AE8", // Follow Up (Light Purple)
-          "#77D9DE", // Other (Cyan)
-          "#F2B100", // Safety (Yellow)
-        ],
+        backgroundColor: ["#7275F1", "#988AE8", "#77D9DE", "#F2B100"],
         borderWidth: 0,
       },
     ],
   };
 
-  // Custom plugin to draw percentage labels inside slices
   const centerTextPlugin = {
     id: "centerText",
     afterDraw(chart) {
@@ -53,7 +53,7 @@ const ViolationTypeChart = () => {
           pointStyle: "circle",
           boxWidth: 6,
           boxHeight: 6,
-          padding: 30,
+          padding: 40,
         },
       },
       tooltip: {
@@ -69,7 +69,7 @@ const ViolationTypeChart = () => {
   return (
     <div className="bg-[#0F131C] p-4 rounded-xl border border-gray-800 w-full h-[310px]">
       <h2 className="text-[#FFFFFFCC] text-2xl font-semibold mb-5 mt-1 pl-3">
-        Violation Type
+        {t("Violation Type")}
       </h2>
       <div className="h-[225px]">
         <Pie data={data} options={options} plugins={[centerTextPlugin]} />

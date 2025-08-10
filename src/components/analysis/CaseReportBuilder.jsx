@@ -1,19 +1,22 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function CaseReportBuilder() {
+  const { t } = useTranslation();
+
   const [selected, setSelected] = useState([
-    "User Data",
-    "Media",
-    "Evidence Files",
+    t("User Data"),
+    t("Media"),
+    t("Evidence Files"),
   ]);
 
   const items = [
-    "User Data",
-    "Logs",
-    "Media",
-    "Evidence Files",
-    "Drone Video",
-    "Investigation Timeline",
+    t("User Data"),
+    t("Logs"),
+    t("Media"),
+    t("Evidence Files"),
+    t("Drone Video"),
+    t("Investigation Timeline"),
   ];
 
   const toggleItem = (item) => {
@@ -26,23 +29,23 @@ export default function CaseReportBuilder() {
 
   return (
     <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-lg px-6 py-4 w-full mt-5 mb-10 border border-gray-800">
-      <h2 className="text-md font-medium mb-4">Case Report Builder</h2>
+      <h2 className="text-md font-medium mb-4">{t("Case Report Builder")}</h2>
       <div className="flex justify-between flex-wrap gap-6">
         {items.map((item) => {
           const isChecked = selected.includes(item);
           return (
             <label
               key={item}
-              className="flex items-center justify-between gap-2 "
+              className="flex items-center justify-between gap-2 cursor-pointer"
+              onClick={() => toggleItem(item)}
             >
               <span
-                className={`w-3 h-3 flex items-center justify-center rounded-sm border border-gray-500 cursor-pointer 
+                className={`w-3 h-3 flex items-center justify-center rounded-sm border border-gray-500 
                   ${
                     isChecked
                       ? "bg-green-500 border-green-500"
                       : "bg-white border-gray-400"
                   }`}
-                onClick={() => toggleItem(item)}
               >
                 {isChecked && (
                   <svg

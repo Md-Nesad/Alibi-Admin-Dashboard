@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Image, Location } from "../../assets/icons/Chat";
+import { useTranslation } from "react-i18next";
 
 export default function ChatUI() {
+  const { t } = useTranslation();
   const [messages, setMessages] = useState([
     { text: "Hello", sender: "left", time: "11:15 am" },
     { text: "Please send a photo", sender: "right", time: "11:17 am" },
@@ -53,8 +55,12 @@ export default function ChatUI() {
       <div className="bg-[#0F131C] w-full rounded-xl overflow-hidden shadow-lg font-sans flex flex-col">
         {/* Header */}
         <div className="p-4 border-b border-[#1f2226] bg-[#17202C]">
-          <h1 className="text-[#FFFFFFCC] text-[16px] font-semibold">Chat</h1>
-          <p className="text-[#FFFFFF80] text-[12px]">Encrypted messaging</p>
+          <h1 className="text-[#FFFFFFCC] text-[16px] font-semibold">
+            {t("Chat")}
+          </h1>
+          <p className="text-[#FFFFFF80] text-[12px]">
+            {t("Encrypted messaging")}"
+          </p>
         </div>
 
         {/* Chat Body with fixed height */}
@@ -93,7 +99,7 @@ export default function ChatUI() {
           <div className="relative w-full">
             <input
               type="text"
-              placeholder="Type here..."
+              placeholder={t("Type here")}
               className="flex-1 bg-transparent outline-none text-gray-300 placeholder-gray-500 text-[13px] border border-gray-800 rounded-full py-2 px-4 w-full"
               value={input}
               onChange={(e) => setInput(e.target.value)}

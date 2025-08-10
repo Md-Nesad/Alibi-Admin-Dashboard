@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import BroadcastModal from "../../modal/BroadCastModal";
 import EmergencyCallModal from "../../modal/EmergencyCallModal";
+import { useTranslation } from "react-i18next";
 
 const ActionCard = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -24,7 +26,7 @@ const ActionCard = () => {
           <span className="text-white bg-gray-600 p-2 rounded">
             <Drone size={18} />
           </span>
-          <span className="text-md ml-2 font-medium">Deploy Drone</span>
+          <span className="text-md ml-2 font-medium">{t("Deploy Drone")}</span>
         </div>
         <span className="text-[#FFFFFFB2] p-[1px] border border-gray-600 rounded">
           <ArrowUpRight />
@@ -37,7 +39,9 @@ const ActionCard = () => {
           <span className="text-white bg-gray-600 p-2 rounded">
             <Megaphone size={24} />
           </span>
-          <span className="text-md ml-2 font-medium">Send Broadcast</span>
+          <span className="text-md ml-2 font-medium">
+            {t("Send Broadcast")}
+          </span>
         </div>
         <span className="text-[#FFFFFFB2] p-[1px] border border-gray-600 rounded">
           <ArrowUpRight />
@@ -50,7 +54,7 @@ const ActionCard = () => {
           <span className="text-white bg-gray-600 p-2 rounded">
             <PhoneCall size={24} />
           </span>
-          <span className="text-md ml-2 font-medium">Emergency Call</span>
+          <span className="text-md ml-2 font-medium">{t("Emergency Call")}</span>
         </div>
         <span className="text-[#FFFFFFB2] p-[1px] border border-gray-600 rounded">
           <ArrowUpRight />

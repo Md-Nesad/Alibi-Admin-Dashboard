@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { roles } from "../../data/Setting";
+import { useTranslation } from "react-i18next";
 
 const ToggleSwitch = ({ enabled, onToggle }) => (
   <button
@@ -17,6 +18,7 @@ const ToggleSwitch = ({ enabled, onToggle }) => (
 );
 
 const RoleAssignment = () => {
+  const { t } = useTranslation();
   const [permissions, setPermissions] = useState({
     admin: Array(7).fill(true),
     supervisor: Array(5).fill(true),
@@ -34,19 +36,19 @@ const RoleAssignment = () => {
   return (
     <div className="bg-[#0F131C] py-4 rounded-lg w-full border border-gray-800 h-[630px] mb-10 text-[#FFFFFFCC] font-sans">
       <h2 className="text-lg text-[#FFFFFFCC] font-semibold pl-7 2xl:pl-13 border-b border-gray-700 pb-4">
-        Role Assignment
+        {t("Role Assignment")}
       </h2>
       <table className="w-full border-collapse text-sm">
         <thead>
           <tr className="border-b border-gray-700">
             <th className=" py-4 pl-7 text-[15px] 2xl:pl-13 text-left font-medium">
-              Role
+              {t("Role")}
             </th>
             <th className=" py-3 pl-44 2xl:pl-80 text-[15px] text-left font-medium">
-              Permissions
+              {t("Permissions")}
             </th>
             <th className=" py-3 pl-7 text-[15px] text-left font-medium">
-              Action
+              {t("Action")}
             </th>
           </tr>
         </thead>
@@ -67,11 +69,11 @@ const RoleAssignment = () => {
                       rowSpan={role.permissions.length}
                       className="py-3 pl-7 2xl:pl-13 font-medium text-[#FFFFFFCC] whitespace-nowrap align-top mb-6 text-[14.5px]"
                     >
-                      {role.role}
+                      {t(role.role)}
                     </td>
                   )}
                   <td className="py-2 pl-44 2xl:pl-80 text-[#FFFFFF99]">
-                    {perm}
+                    {t(perm)}
                   </td>
                   <td className="py-2 pl-10 mb-6">
                     <ToggleSwitch

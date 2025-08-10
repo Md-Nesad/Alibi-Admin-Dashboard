@@ -1,4 +1,12 @@
 {
   "ALIBI DALEL": "دليل البراءة",
-  "admin": "مسؤول"
+  "admin": "مسؤول",
+  "adminDashboard": "لوحة تحكم المسؤول",
+  "userManagement": "إدارة المستخدمين",
+  "liveMonitoring": "المراقبة المباشرة",
+  "aiIntelligenceCenter": "مركز الذكاء الاصطناعي",
+  "userInteraction": "تفاعل المستخدم",
+  "droneDeployment": "نشر الطائرات بدون طيار",
+  "analyticsReports": "التحليلات والتقارير",
+  "systemSettings": "إعدادات النظام"
 }

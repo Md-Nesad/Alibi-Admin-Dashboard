@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { chatUsers } from "../../data/ChatUsers";
 import { Search } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ActiveUsers = () => {
+  const { t } = useTranslation();
   const [searchText, setSeachText] = useState("");
 
   const filterActiveUser = chatUsers.filter((user) => {
@@ -17,7 +19,7 @@ const ActiveUsers = () => {
         <div className="relative">
           <input
             type="text"
-            placeholder="Search"
+            placeholder={t("Search by name")}
             value={searchText}
             onChange={(e) => setSeachText(e.target.value)}
             className="w-full pl-4 pr-12 py-2 border border-gray-700 rounded-full focus:outline-none focus:ring-1 focus:ring-orange-400 text-sm my-5"
@@ -42,13 +44,15 @@ const ActiveUsers = () => {
                     alt={user.name}
                     className="w-11 h-11 rounded-full object-cover"
                   />
-                  <div>
+                  <div className="">
                     <h3 className="font-medium text-[#FFFFFFCC]">
-                      {user.name}
+                      {t(user.name)}
                     </h3>
-                    <div className="flex justify-between items-center gap-9">
-                      <p className="text-xs text-[#FFFFFF80]">{user.text}</p>
-                      <small className="text-[11px] text-[#FFFFFF80]">
+                    <div className="flex justify-between items-center relative">
+                      <p className="text-xs text-[#FFFFFF80] ">
+                        {t(user.text)}
+                      </p>
+                      <small className="text-[11px] text-[#FFFFFF80] absolute top-0 left-40">
                         {user.time}
                       </small>
                     </div>
@@ -59,7 +63,7 @@ const ActiveUsers = () => {
           })
         ) : (
           <div className="text-white text-center text-md mt-5 font-semibold">
-            ❌ No matches found!
+            ❌ {t("No matches found!")}
           </div>
         )}
       </div>
