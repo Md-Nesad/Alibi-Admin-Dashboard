@@ -2,6 +2,7 @@ import { FaUsers, FaExclamationTriangle } from "react-icons/fa";
 import Setting from "../../assets/icons/Setting";
 import { Link } from "react-router-dom";
 import { DroneDeployment } from "../../assets/icons/Overview";
+import { useTranslation } from "react-i18next";
 
 const StatusCard = ({ icon, label, value, path }) => (
   <Link to={path}>
@@ -16,30 +17,31 @@ const StatusCard = ({ icon, label, value, path }) => (
 );
 
 export default function DashboardStatus() {
+  const { t } = useTranslation();
   return (
     <div className="grid grid-cols-4 gap-4 my-5 2xl:gap-6">
       <StatusCard
         icon={<FaUsers />}
-        label="Active Users"
-        value="09"
+        label={t("Active Users")}
+        value={t("09")}
         path="/dashboard/user_interection"
       />
       <StatusCard
         icon={<FaExclamationTriangle />}
-        label="Flagged Violations"
-        value="10"
+        label={t("Flagged Violations")}
+        value={t("10")}
         path="/dashboard/user_management"
       />
       <StatusCard
         icon={<DroneDeployment />}
-        label="Drone Missions"
-        value="16"
+         label={t("Drone Missions")}
+        value={t("16")}
         path="/dashboard/drone_deployee"
       />
       <StatusCard
         icon={<Setting />}
-        label="System Status"
-        value="Healthy"
+        label={t("System Status")}
+        value={t("Healthy")}
         path="/dashboard/analysis"
       />
     </div>

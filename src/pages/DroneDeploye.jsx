@@ -1,13 +1,13 @@
-// import React, { useState } from "react";
-// import MapSection from "../components/droneDeploy/MapSection";
-// import DroneCommandCard from "../components/droneDeploy/DroneCommand";
-// import DroneMissionLogs from "../components/droneDeploy/DroneMissileLog";
+import React, { useState } from "react";
+import MapSection from "../components/droneDeploy/MapSection";
+import DroneCommandCard from "../components/droneDeploy/DroneCommand";
+import DroneMissionLogs from "../components/droneDeploy/DroneMissileLog";
 
 export default function DroneDeploye() {
-  // const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedUser, setSelectedUser] = useState(null);
   return (
     <div className="mt-5">
-      {/* <div className="grid grid-cols-3 gap-6 2xl:gap-9">
+      <div className="grid grid-cols-3 gap-6 2xl:gap-9">
         <div className="col-span-2">
           <MapSection />
         </div>
@@ -23,8 +23,8 @@ export default function DroneDeploye() {
 
       <div className="mt-5 mb-10">
         <DroneMissionLogs />
-      </div> */}
-      page is under construction
+      </div>
+     
     </div>
   );
 }

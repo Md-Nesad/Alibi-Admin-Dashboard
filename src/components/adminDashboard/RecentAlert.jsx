@@ -11,8 +11,10 @@ import RecentAlertModal from "../../modal/RecentAlertModal";
 import RecentAlertChatModal from "../../modal/RecentAlertModalChart";
 import RecentAlertVideoCallModal from "../../modal/RecentAlertVideoCallModal";
 import UserModal from "../../modal/UserModal";
+import { useTranslation } from "react-i18next";
 
 export default function RecentAlerts() {
+  const { t } = useTranslation();
   const [selectedUser, setSelectedUser] = useState(null);
   const [selectedChatUser, setSelectedChatUser] = useState(null);
   const [selectedVideoUser, setSelectedVideoUser] = useState(null);
@@ -21,7 +23,7 @@ export default function RecentAlerts() {
   return (
     <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-xl w-full h-[285px] shadow-md border border-gray-800">
       <h2 className="text-xl font-medium py-3 pl-6 border-b border-[#334155]">
-        Recent Alerts
+        {t("Recent Alerts")}
       </h2>
       <div className="overflow-x-auto py-4 px-3 h-[250px]">
         <div className="rounded-lg border border-gray-800 overflow-hidden">
@@ -29,12 +31,12 @@ export default function RecentAlerts() {
             <thead className="bg-[#0F131C] text-gray-300">
               <tr>
                 <th className="text-left px-4 py-2 border-r border-gray-800">
-                  Name
+                  {t("name")}
                 </th>
                 <th className="text-left px-4 py-1 border-r border-gray-800 2xl:text-center">
-                  Description
+                  {t("Description")}
                 </th>
-                <th className="text-left px-4 py-1 2xl:text-center">Action</th>
+                <th className="text-left px-4 py-1 2xl:text-center">{t("Action")}</th>
               </tr>
             </thead>
             <tbody>
@@ -53,11 +55,11 @@ export default function RecentAlerts() {
                         alt={alert.name}
                         className="w-8 h-8 rounded-full object-cover"
                       />
-                      <span className="text-[#FFFFFFB2]">{alert.name}</span>
+                      <span className="text-[#FFFFFFB2]">{t(alert.name)}</span>
                     </div>
                   </td>
                   <td className="px-3 py-1 border-r border-gray-800 text-[#FFFFFFB2] text-[12px] 2xl:text-center">
-                    {alert.description}
+                    {t(alert.description)}
                   </td>
                   <td className="px-3 py-1">
                     <div className="flex gap-2 2xl:gap-5 2xl:justify-center">

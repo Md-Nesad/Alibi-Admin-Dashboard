@@ -11,42 +11,44 @@ import {
   UserInterection,
 } from "../assets/icons/Overview";
 import { SettingsIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const sidebarLinks = [
     {
-      name: "Admin Dashboard",
+      name: t("adminDashboard"),
       path: "/dashboard/overview",
       icon: <Overview />,
     },
     {
-      name: "User Management",
+      name: t("userManagement"),
       path: "/dashboard/user_management",
       icon: <User />,
     },
     {
-      name: "Live Monitoring",
+      name: t("liveMonitoring"),
       path: "/dashboard/live_monitoring",
       icon: <LiveMonitoring />,
     },
     {
-      name: "AI Intelligence Center",
+      name: t("aiIntelligenceCenter"),
       path: "/dashboard/ai_inteligence",
       icon: <AI />,
     },
     {
-      name: "User Interaction",
+      name: t("userInteraction"),
       path: "/dashboard/user_interection",
       icon: <UserInterection />,
     },
     {
-      name: "Drone Deployment",
+      name: t("droneDeployment"),
       path: "/dashboard/drone_deployee",
       icon: <DroneDeployment />,
     },
     {
-      name: "Analytics & Reports",
+      name: t("analyticsReports"),
       path: "/dashboard/analysis",
       icon: <Analytics />,
     },
@@ -84,8 +86,8 @@ const Dashboard = () => {
                   : ""
               }`}
             >
-              <SettingsIcon className="w-5 h-5 mx-3 my-2 text-white" />
-              <button className="text-white">System Settings</button>
+              <SettingsIcon className="w-5 h-5 ml-3 my-2 text-white" />
+              <button className="text-white">{t("systemSettings")}</button>
             </div>
           </Link>
         </div>

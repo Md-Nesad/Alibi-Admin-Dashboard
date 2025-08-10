@@ -47,7 +47,7 @@ const DashboardMenu = () => {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search here..."
+                  placeholder={t("Search here...")}
                   className="w-full pl-4 pr-12 py-2 border border-gray-700 rounded-full focus:outline-none focus:ring-1 focus:ring-orange-400 text-sm"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
@@ -57,17 +57,22 @@ const DashboardMenu = () => {
             </div>
           </div>
 
-          <div>
-            <button onClick={() => changeLanguage("en")} className="mx-2">
-              English
-            </button>
-            <button onClick={() => changeLanguage("ar")} className="mx-2">
-              العربية
-            </button>
-          </div>
-
           {/* Notification & Profile */}
           <div className="flex items-center gap-4">
+            <div>
+              <button
+                onClick={() => changeLanguage("en")}
+                className="mx-2 bg-[#17202C] py-2 px-4 rounded-md hover:bg-[#1d2837] transition-colors duration-200"
+              >
+                English
+              </button>
+              <button
+                className="mx-2 bg-[#17202C] py-2 px-4 rounded-md hover:bg-[#1d2837] transition-colors duration-200"
+                onClick={() => changeLanguage("ar")}
+              >
+                العربية
+              </button>
+            </div>
             {/* Notification */}
             <button
               onClick={() => setIsNotificationOpen(!isNotificationOpen)}
@@ -93,7 +98,7 @@ const DashboardMenu = () => {
                   alt="Profile"
                   className="w-6 h-6 rounded-full object-cover"
                 />
-                <span className="text-sm hidden sm:block">Admin</span>
+                <span className="text-sm hidden sm:block">{t("admin")}</span>
                 <svg
                   className="w-4 h-4 ml-1 hidden sm:block"
                   fill="none"

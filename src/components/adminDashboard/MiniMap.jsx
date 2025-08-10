@@ -3,8 +3,10 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
 import { usermanagement } from "../../data/Data";
 import UserModal from "../../modal/UserModal";
+import { useTranslation } from "react-i18next";
 
 const MiniMap = ({ userLocation }) => {
+  const { t } = useTranslation();
   const [selectedUser, setSelectedUser] = useState(null);
 
   const ammanCoords = [31.9632, 35.9239];
@@ -45,7 +47,7 @@ const MiniMap = ({ userLocation }) => {
   return (
     <div className="relative w-full bg-[#0a0a0a] h-full rounded-2xl shadow-lg">
       <h2 className="absolute top-2 left-12 z-[1000] text-[#FFFFFFCC] text-lg font-medium px-3 py-1 rounded shadow">
-        Mini Map
+        {t("Mini Map")}
       </h2>
       <MapContainer
         center={userLocation || ammanCoords}
@@ -78,16 +80,15 @@ const MiniMap = ({ userLocation }) => {
       {/* Legend */}
       <div className="absolute bottom-4 right-4 z-[1000] bg-[#1a1a1a]/90 border border-white/10 text-[#FFFFFFCC] p-3 rounded-md text-xs shadow-md space-y-1">
         <div className="flex items-center">
-          <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span> High
-          Alert
+          <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span>{" "}
+          {t("High Alert")}
         </div>
         <div className="flex items-center">
           <span className="w-3 h-3 bg-orange-400 rounded-full mr-2"></span>{" "}
-          Medium Alert
+          {t("Medium Alert")}
         </div>
         <div className="flex items-center">
-          <span className="w-3 h-3 bg-yellow-300 rounded-full mr-2"></span> Low
-          Alert
+          <span className="w-3 h-3 bg-yellow-300 rounded-full mr-2"></span> {t("Low Alert")}
         </div>
       </div>
 

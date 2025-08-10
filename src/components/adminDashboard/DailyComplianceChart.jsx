@@ -8,6 +8,7 @@ import {
   CartesianGrid,
 } from "recharts";
 import CustomTooltip from "./CustomTooltip";
+import { useTranslation } from "react-i18next";
 
 const data = [
   { x: 10, y: 40 },
@@ -48,10 +49,11 @@ const formatTime = (value) => {
 };
 
 const DailyComplianceChart = () => {
+  const { t } = useTranslation();
   return (
     <div className="bg-[#0F131C] pr-5 py-3 rounded-xl w-full h-[285px] border border-gray-800">
       <h2 className="text-[#FFFFFFCC] text-lg mb-6 ml-6 font-medium">
-        Daily Compliance
+        {t("Daily Compliance")}
       </h2>
       <ResponsiveContainer width="100%" height={205}>
         <AreaChart

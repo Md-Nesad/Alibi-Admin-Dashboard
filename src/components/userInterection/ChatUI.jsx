@@ -84,12 +84,12 @@ export default function ChatUI() {
 
         {/* Footer */}
         <div className="flex items-center p-3 border-t border-[#1f2226] bg-[#0F131C]">
-          <button title="image" className="text-gray-400 mr-3 text-lg">
+          <div title="image" className="text-gray-400 mr-3 text-lg">
             <Image />
-          </button>
-          <button title="location" className="text-gray-400 mr-3 text-sm">
+          </div>
+          <div title="location" className="text-gray-400 mr-3 text-sm">
             <Location />
-          </button>
+          </div>
           <div className="relative w-full">
             <input
               type="text"

@@ -14,7 +14,7 @@ export default function Sidebar() {
       return;
     }
     setTimeout(() => {
-      alert(`${t("callRequest")} ${name || t("select")}`);
+      alert(`${t("callRequest")} ${t(name)}`);
     }, 700);
   };
 
@@ -24,7 +24,7 @@ export default function Sidebar() {
       return;
     }
     setTimeout(() => {
-      alert(`${t("broadcastRequest")} ${name || t("select")}`);
+      alert(`${t("broadcastRequest")} ${t(name) || t("select")}`);
       setNote("");
     }, 700);
   };

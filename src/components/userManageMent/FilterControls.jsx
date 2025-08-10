@@ -1,18 +1,20 @@
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 const FilterControls = () => {
-  const [violation, setViolation] = useState("Unauthorized Access");
-  const [region, setRegion] = useState("East Amman");
+  const { t } = useTranslation();
+  const [violation, setViolation] = useState(t("Unauthorized Access"));
+  const [region, setRegion] = useState(t("East Amman"));
   const [risk, setRisk] = useState(50);
 
   return (
     <div className="bg-[#0F172A] p-4 rounded-md text-white w-full mb-6 mt-6 border border-gray-800">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
         {/* Violation Type */}
-        <div className="">
+        <div>
           <label className="block text-sm mb-2 text-[#FFFFFFCC] font-medium">
-            Violation Type
+            {t("Violation Type")}
           </label>
           <div className="relative">
             <select
@@ -20,10 +22,10 @@ const FilterControls = () => {
               onChange={(e) => setViolation(e.target.value)}
               className="w-full bg-[#090c12] border border-[#334155] rounded-md py-2 pl-4 text-sm text-[#FFFFFFCC] focus:outline-none appearance-none"
             >
-              <option>Unauthorized Access</option>
-              <option>Unauthorized Login</option>
-              <option>Location Mismatch</option>
-              <option>Device Breach</option>
+              <option>{t("Unauthorized Access")}</option>
+              <option>{t("Unauthorized Login")}</option>
+              <option>{t("Location Mismatch")}</option>
+              <option>{t("Device Breach")}</option>
             </select>
             <FiChevronDown className="absolute right-3 top-3 text-gray-400 pointer-events-none" />
           </div>
@@ -32,7 +34,7 @@ const FilterControls = () => {
         {/* Region */}
         <div>
           <label className="block text-sm mb-2 text-[#FFFFFFCC] font-medium">
-            Region
+            {t("Region")}
           </label>
           <div className="relative">
             <select
@@ -40,8 +42,8 @@ const FilterControls = () => {
               onChange={(e) => setRegion(e.target.value)}
               className="w-full bg-[#090c12] border border-[#334155] rounded-lg py-2 pl-4 text-sm text-[#FFFFFFCC] focus:outline-none appearance-none"
             >
-              <option>East Amman</option>
-              <option>West Amman</option>
+              <option>{t("East Amman")}</option>
+              <option>{t("West Amman")}</option>
             </select>
             <FiChevronDown className="absolute right-3 top-3 text-gray-400 pointer-events-none" />
           </div>
@@ -49,11 +51,11 @@ const FilterControls = () => {
 
         {/* Risk Slider */}
         <div>
-          <label className="block text-sm mb-2 text-[#FFFFFFCC] font-medium ">
-            Risk Slider
+          <label className="block text-sm mb-2 text-[#FFFFFFCC] font-medium">
+            {t("Risk Slider")}
           </label>
           <div className="flex items-center gap-2 w-full bg-[#090c12] border border-[#334155] rounded-lg py-[10px] px-4 text-sm text-white focus:outline-none">
-            <span className="text-xs text-gray-400">0</span>
+            <span className="text-xs text-gray-400">{t("0")}</span>
             <input
               type="range"
               min="0"
@@ -62,7 +64,7 @@ const FilterControls = () => {
               onChange={(e) => setRisk(e.target.value)}
               className="w-full accent-yellow-400 bg-[#1E293B]"
             />
-            <span className="text-xs text-gray-400">100</span>
+            <span className="text-xs text-gray-400">{t("100")}</span>
           </div>
         </div>
       </div>
