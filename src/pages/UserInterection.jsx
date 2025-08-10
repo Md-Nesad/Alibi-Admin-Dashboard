@@ -13,10 +13,10 @@ export default function UserInterection() {
         <div className="w-full">
           <ChatUI />
         </div> */}
-
-        <div>
+        {/* <div>
           <Sidebar />
-        </div>
+        </div> */}
+        page is under construction
       </div>
     </div>
   );
