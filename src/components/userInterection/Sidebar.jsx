@@ -1,62 +1,61 @@
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
+import "../../i18n";
 
 export default function Sidebar() {
+  const { t } = useTranslation();
   const [name, setName] = useState("");
   const [note, setNote] = useState("");
+
   const handleCallRequest = () => {
     if (!name) {
-      alert("Please select a name.");
+      alert(t("enterName"));
       return;
     }
-    // Handle video call request
     setTimeout(() => {
-      alert(`Video call request sent to ${name || "all users. Please wait."}`);
+      alert(`${t("callRequest")} ${name || t("select")}`);
     }, 700);
   };
 
   const handleBroadCartRequest = () => {
     if (!note) {
-      alert("Please enter a note.");
+      alert(t("enterNote"));
       return;
     }
-    // Handle broadcast cart request
     setTimeout(() => {
-      alert(
-        `Broadcast cart request sent to ${name || "all users. Please wait."}`
-      );
+      alert(`${t("broadcastRequest")} ${name || t("select")}`);
       setNote("");
     }, 700);
   };
+
   return (
     <div className="bg-[#0F131C] text-white py-4 border border-gray-800 w-full sm:w-64 space-y-3 rounded-lg">
-      {/* Video Call Section */}
+      {/* Video Call */}
       <div className="space-y-3">
         <h2 className="text-md text-center text-[#FFFFFFCC] border-b border-gray-800 pb-2 font-semibold">
-          Video Call
+          {t("videoCall")}
         </h2>
-        {/* name */}
+
+        {/* Name */}
         <div className="px-3 mt-[-7px]">
-          <label className="text-[#FFFFFFB2] text-sm" htmlFor="name">
-            Name
-          </label>
+          <label className="text-[#FFFFFFB2] text-sm">{t("name")}</label>
           <div className="relative">
             <select
               className="w-full bg-[#17202C] text-[#FFFFFF66] rounded-md px-2 py-1 text-sm outline-none border border-[#30363D] appearance-none cursor-pointer"
               value={name}
               onChange={(e) => setName(e.target.value)}
             >
-              <option value="">Select</option>
-              <option value="Mira Al-Sayfani">Mira Al-Sayfani</option>
-              <option value="Salma Dahrani">Salma Dahrani</option>
-              <option value="Yousef Barqani">Yousef Barqani</option>
-              <option value="Noor Khandari">Noor Khandari</option>
+              <option value="Mira Al-Sayfani">{t("Mira Al-Sayfani")}</option>
+              <option value="Salma Dahrani">{t("Salma Dahrani")}</option>
+              <option value="Salma Dahrani">{t("Salma Dahrani")}</option>
+              <option value="Noor Khandari">{t("Noor Khandari")}</option>
             </select>
             <FiChevronDown className="absolute right-3 top-2 text-gray-400 pointer-events-none " />
           </div>
         </div>
 
-        {/* video call */}
+        {/* Video Call Button */}
         <div className="bg-[#0F131C] rounded-lg flex flex-col items-center justify-center pb-15 pt-5 border border-[#30363D] mx-3 relative">
           <svg
             width="38"
@@ -77,62 +76,60 @@ export default function Sidebar() {
               fillOpacity="0.7"
             />
           </svg>
-
-          <span className="text-xs text-[#FFFFFFB2] mt-1">Video Call</span>
-
+          <span className="text-xs text-[#FFFFFFB2] mt-1">
+            {t("videoCall")}
+          </span>
           <button
             onClick={handleCallRequest}
             className="w-full absolute bottom-0 left-0 bg-[#17202C] text-[#FFFFFFB2] rounded-b px-3 py-2 text-sm hover:bg-[#1E242E] transition"
           >
-            Request Call
+            {t("requestCall")}
           </button>
         </div>
       </div>
 
-      {/* Broadcast Alert Section */}
+      {/* Broadcast Alert */}
       <div className="space-y-2">
         <h2 className="text-lg text-center border-t border-b border-gray-800 text-[#FFFFFFCC] py-1">
-          Broadcast Alert
+          {t("broadcastAlert")}
         </h2>
+
+        {/* Region */}
         <div className="px-3">
-          <label className="text-[#FFFFFFB2] text-sm" htmlFor="region">
-            Region
-          </label>
+          <label className="text-[#FFFFFFB2] text-sm">{t("region")}</label>
           <div className="relative">
             <select className="w-full bg-[#17202C] text-[#FFFFFF66] rounded-md px-2 py-1 text-sm outline-none border border-[#30363D] appearance-none cursor-pointer">
-              <option value="">Select</option>
-              <option value="North">North</option>
-              <option value="South">South</option>
-              <option value="East">East</option>
-              <option value="West">West</option>
+              <option value="">{t("select")}</option>
+              <option value="North">{t("north")}</option>
+              <option value="South">{t("south")}</option>
+              <option value="East">{t("east")}</option>
+              <option value="West">{t("west")}</option>
             </select>
             <FiChevronDown className="absolute right-3 top-2 text-gray-400 pointer-events-none " />
           </div>
         </div>
 
+        {/* User Type */}
         <div className="px-3">
-          <label className="text-[#FFFFFFB2] text-sm" htmlFor="type">
-            User Type
-          </label>
+          <label className="text-[#FFFFFFB2] text-sm">{t("userType")}</label>
           <div className="relative">
             <select className="w-full bg-[#17202C] text-[#FFFFFF66] rounded-md px-2 py-1 text-sm outline-none border border-[#30363D] appearance-none cursor-pointer">
-              <option value="">Select</option>
-              <option value="Admin">Admin</option>
-              <option value="Moderator">Moderator</option>
-              <option value="Member">Member</option>
-              <option value="Guest">Guest</option>
+              <option value="">{t("select")}</option>
+              <option value="Admin">{t("admin")}</option>
+              <option value="Moderator">{t("moderator")}</option>
+              <option value="Member">{t("member")}</option>
+              <option value="Guest">{t("guest")}</option>
             </select>
             <FiChevronDown className="absolute right-3 top-2 text-gray-400 pointer-events-none " />
           </div>
         </div>
 
+        {/* Note */}
         <div className="px-3">
-          <label className="text-[#FFFFFFB2] text-sm" htmlFor="name">
-            Note
-          </label>
+          <label className="text-[#FFFFFFB2] text-sm">{t("note")}</label>
           <textarea
             className="w-full text-[#FFFFFF66] rounded-md px-2 py-1 text-sm outline-none border border-[#30363D] h-16 resize-none"
-            placeholder="Type here..."
+            placeholder={t("typeHere")}
             value={note}
             onChange={(e) => setNote(e.target.value)}
           ></textarea>
@@ -142,7 +139,7 @@ export default function Sidebar() {
           onClick={handleBroadCartRequest}
           className="w-[88%] ml-4 bg-[#17202C] text-[#FFFFFFCC] rounded px-3 py-2 text-sm hover:bg-[#1E242E] transition"
         >
-          Send
+          {t("send")}
         </button>
       </div>
     </div>

@@ -1,21 +1,33 @@
-import { Button } from "@radix-ui/themes";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
 
 export default function Home() {
-  const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+
+  const changeLang = (lang) => {
+    i18n.changeLanguage(lang);
+    document.documentElement.setAttribute("lang", lang);
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  };
+
   return (
-    <div className="text-3xl text-center mx-auto mt-5">
-      <h1 className="text-3xl text-center mx-auto mt-5">
-        Alibi Admin Dashboard
-      </h1>
-      <Button
-        color="green"
-        variant="outline"
-        onClick={() => navigate("/login")}
-      >
-        Login
-      </Button>
+    <div>
+      <div className="flex justify-center gap-2 mb-2">
+        <button
+          onClick={() => changeLang("en")}
+          className="px-2 py-1 bg-gray-700 rounded"
+        >
+          EN
+        </button>
+        <button
+          onClick={() => changeLang("ar")}
+          className="px-2 py-1 bg-gray-700 rounded"
+        >
+          AR
+        </button>
+      </div>
+
+      <h1>{t("welcome")}</h1>
     </div>
   );
 }

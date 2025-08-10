@@ -5,11 +5,18 @@ import { Search, Bell } from "lucide-react";
 import { useState } from "react";
 import EditProfileModal from "../../modal/EditProfile";
 import NotificationModal from "../../modal/Notification";
+import { useTranslation } from "react-i18next";
 
 const DashboardMenu = () => {
   const [open, setOpen] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    document.documentElement.setAttribute("lang", lang);
+  };
 
   const handleEditProfileClose = () => {
     setIsEditOpen(false);
@@ -31,7 +38,7 @@ const DashboardMenu = () => {
                 />
               </Link>
               <h2 className="ml-6 font-bold text-lg sm:text-xl text-white">
-                ALIBI DALEL
+                {t("ALIBI DALEL")}
               </h2>
             </div>
 
@@ -48,6 +55,15 @@ const DashboardMenu = () => {
                 </span>
               </div>
             </div>
+          </div>
+
+          <div>
+            <button onClick={() => changeLanguage("en")} className="mx-2">
+              English
+            </button>
+            <button onClick={() => changeLanguage("ar")} className="mx-2">
+              العربية
+            </button>
           </div>
 
           {/* Notification & Profile */}

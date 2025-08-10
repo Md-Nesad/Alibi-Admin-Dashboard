@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import "./App.css";
 import Setting from "./pages/Setting";
+import Home from "./pages/Home";
 
 // Lazy-loaded pages
 const Login = lazy(() => import("./pages/Login"));
@@ -34,7 +35,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route index element={<Login />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="overview" element={<Overview />} />
             <Route path="user_management" element={<UserManageMent />} />

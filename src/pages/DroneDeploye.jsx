@@ -6,27 +6,25 @@
 export default function DroneDeploye() {
   // const [selectedUser, setSelectedUser] = useState(null);
   return (
-    // <div className="mt-5">
-    //   <div className="grid grid-cols-3 gap-6 2xl:gap-9">
-    //     <div className="col-span-2">
-    //       <MapSection />
-    //     </div>
+    <div className="mt-5">
+      {/* <div className="grid grid-cols-3 gap-6 2xl:gap-9">
+        <div className="col-span-2">
+          <MapSection />
+        </div>
 
-    //     <div className="col-span-1">
-    //       <DroneCommandCard
-    //         dronePosition={[31.9216, 35.85]}
-    //         targetPosition={[31.9806, 35.9934]}
-    //         userLocation={[31.9632, 35.9239]}
-    //       />
-    //     </div>
-    //   </div>
+        <div className="col-span-1">
+          <DroneCommandCard
+            dronePosition={[31.9216, 35.85]}
+            targetPosition={[31.9806, 35.9934]}
+            userLocation={[31.9632, 35.9239]}
+          />
+        </div>
+      </div>
 
-    //   <div className="mt-5 mb-10">
-    //     <DroneMissionLogs />
-    //   </div>
-    // </div>
-    <>
-      <h1>This is the drone deploy page. Under construction</h1>
-    </>
+      <div className="mt-5 mb-10">
+        <DroneMissionLogs />
+      </div> */}
+      page is under construction
+    </div>
   );
 }
