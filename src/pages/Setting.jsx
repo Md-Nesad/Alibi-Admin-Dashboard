@@ -4,8 +4,8 @@ import RoleAssignment from "../components/setting/RoleAssigment";
 
 export default function Setting() {
   return (
-    <>
-      <div className="grid grid-cols-4 gap-4 mt-5">
+    <div className="2xl:mt-8">
+      <div className="grid grid-cols-4 gap-4 mt-5 2xl:gap-9">
         <div className="col-span-3">
           <AuditLog />
         </div>
@@ -15,9 +15,9 @@ export default function Setting() {
         </div>
       </div>{" "}
       <br />
-      <div>
+      <div className="2xl:mt-5">
         <RoleAssignment />
       </div>
-    </>
+    </div>
   );
 }

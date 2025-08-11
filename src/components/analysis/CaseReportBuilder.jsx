@@ -28,7 +28,7 @@ export default function CaseReportBuilder() {
   };
 
   return (
-    <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-lg px-6 py-4 w-full mt-5 mb-10 border border-gray-800">
+    <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-lg px-6 py-4 min-[1920px]:py-7 w-full mt-5 mb-10 border border-gray-800">
       <h2 className="text-md font-medium mb-4">{t("Case Report Builder")}</h2>
       <div className="flex justify-between flex-wrap gap-6">
         {items.map((item) => {

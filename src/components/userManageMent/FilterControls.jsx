@@ -9,7 +9,7 @@ const FilterControls = () => {
   const [risk, setRisk] = useState(50);
 
   return (
-    <div className="bg-[#0F172A] p-4 rounded-md text-white w-full mb-6 mt-6 border border-gray-800">
+    <div className="bg-[#0F172A] p-4 min-[1920px]:py-7 rounded-md text-white w-full mb-6 mt-6 border border-gray-800">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
         {/* Violation Type */}
         <div>

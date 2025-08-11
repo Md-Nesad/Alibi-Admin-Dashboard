@@ -21,13 +21,13 @@ export default function RecentAlerts() {
   const [selectedFile, setSelectedFile] = useState(null);
 
   return (
-    <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-xl w-full h-[285px] shadow-md border border-gray-800">
+    <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-xl w-full h-[285px] shadow-md border border-gray-800 min-[1920px]:h-[399px]">
       <h2 className="text-xl font-medium py-3 pl-6 border-b border-[#334155]">
         {t("Recent Alerts")}
       </h2>
-      <div className="overflow-x-auto py-4 px-3 h-[250px]">
+      <div className="overflow-x-auto py-4 px-3 h-[250px] 2xl:h-[350px]">
         <div className="rounded-lg border border-gray-800 overflow-hidden">
-          <table className="min-w-full text-xs bg-[#0F131C]">
+          <table className="min-w-full text-xs bg-[#0F131C] min-[1920px]:h-[310px]">
             <thead className="bg-[#0F131C] text-gray-300">
               <tr>
                 <th className="text-left px-4 py-2 border-r border-gray-800">
@@ -36,7 +36,9 @@ export default function RecentAlerts() {
                 <th className="text-left px-4 py-1 border-r border-gray-800 2xl:text-center">
                   {t("Description")}
                 </th>
-                <th className="text-left px-4 py-1 2xl:text-center">{t("Action")}</th>
+                <th className="text-left px-4 py-1 2xl:text-center">
+                  {t("Action")}
+                </th>
               </tr>
             </thead>
             <tbody>

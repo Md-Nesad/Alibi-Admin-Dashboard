@@ -52,7 +52,7 @@ export default function ChatUI() {
 
   return (
     <div className="bg-[#0F131C] w-full flex justify-center items-center rounded-xl border border-gray-800">
-      <div className="bg-[#0F131C] w-full rounded-xl overflow-hidden shadow-lg font-sans flex flex-col">
+      <div className="bg-[#0F131C] w-full rounded-xl overflow-hidden shadow-lg font-sans flex flex-col h-[675px] min-[1520px]:h-[725px] min-[1920px]:h-screen">
         {/* Header */}
         <div className="p-4 border-b border-[#1f2226] bg-[#17202C]">
           <h1 className="text-[#FFFFFFCC] text-[16px] font-semibold">
@@ -64,10 +64,7 @@ export default function ChatUI() {
         </div>
 
         {/* Chat Body with fixed height */}
-        <div
-          className="p-6 space-y-5 overflow-y-auto custom-scroll-chat"
-          style={{ height: "450px" }}
-        >
+        <div className="p-4 mb-7 space-y-5 overflow-y-auto custom-scroll-chat h-[513px] min-[1520px]:h-[563px] min-[1920px]:h-screen">
           {messages.map((msg, i) => (
             <div
               key={i}

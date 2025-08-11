@@ -59,20 +59,6 @@ const DashboardMenu = () => {
 
           {/* Notification & Profile */}
           <div className="flex items-center gap-4">
-            <div>
-              <button
-                onClick={() => changeLanguage("en")}
-                className="mx-2 bg-[#17202C] py-2 px-4 rounded-md hover:bg-[#1d2837] transition-colors duration-200"
-              >
-                English
-              </button>
-              <button
-                className="mx-2 bg-[#17202C] py-2 px-4 rounded-md hover:bg-[#1d2837] transition-colors duration-200"
-                onClick={() => changeLanguage("ar")}
-              >
-                العربية
-              </button>
-            </div>
             {/* Notification */}
             <button
               onClick={() => setIsNotificationOpen(!isNotificationOpen)}
@@ -115,16 +101,46 @@ const DashboardMenu = () => {
               </button>
 
               {open && (
-                <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg text-black z-10">
+                <div className="absolute right-0 mt-2 w-40 bg-[#0F131C] text-[#FFFFFFCC] rounded-md shadow-lg z-10 border border-gray-800">
                   <button
                     onClick={() => setIsEditOpen(true)}
-                    className="block px-4 py-2 hover:bg-gray-100 hover:rounded-md"
+                    className="block w-full py-2 text-start pl-4 hover:bg-[#1b212f]  hover:rounded-md"
                   >
                     Profile
                   </button>
+
+                  {/* Language Toggle Switch */}
+                  <div className="flex justify-start items-center px-3 py-2">
+                    <div
+                      onClick={() => {
+                        const newLang = i18n.language === "en" ? "ar" : "en";
+                        changeLanguage(newLang);
+                      }}
+                      className={`relative w-15 h-5 flex items-center rounded-full cursor-pointer transition-colors duration-300 ${
+                        i18n.language === "en"
+                          ? "bg-[#FFFFFFCC]"
+                          : "bg-[#ffffffa6]"
+                      }`}
+                    >
+                      <div
+                        className={`absolute w-5 h-5 bg-green-400 rounded-full shadow-md transform transition-transform duration-300 ${
+                          i18n.language === "en"
+                            ? "translate-x-0"
+                            : "translate-x-10"
+                        }`}
+                      ></div>
+                      <span className="absolute left-2 text-xs font-bold">
+                        EN
+                      </span>
+                      <span className="absolute right-2 text-xs font-bold">
+                        AR
+                      </span>
+                    </div>
+                  </div>
+
                   <Link
                     to="/login"
-                    className="block px-4 py-2 hover:bg-gray-100 hover:rounded-md"
+                    className="block px-4 py-2 hover:bg-[#1b212f]  hover:rounded-md"
                   >
                     Logout
                   </Link>

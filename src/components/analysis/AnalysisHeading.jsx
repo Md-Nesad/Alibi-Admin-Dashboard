@@ -6,7 +6,7 @@ export default function AnalysisHeading() {
 
   return (
     <div>
-      <div className="flex justify-between items-center bg-[#0F131C] rounded-lg border border-gray-800 py-3 px-5 w-full mt-5">
+      <div className="flex justify-between items-center bg-[#0F131C] rounded-lg border border-gray-800 py-3 min-[1920px]:py-5 px-5 w-full mt-5 min-[1920px]:mb-4">
         <h2 className="font-medium text-[#FFFFFFCC]">
           {t("Analysis and Report")}
         </h2>
@@ -24,10 +24,11 @@ export default function AnalysisHeading() {
           <FiChevronDown className="absolute right-2 top-3 text-gray-400 pointer-events-none" />
         </div>
       </div>
+
       {/* second row */}
       <div className="flex justify-between items-center rounded-xl py-5 w-full gap-4">
         <div className="relative flex-1">
-          <select className="bg-black border border-[#334155] rounded-md py-2 pl-3 pr-10 text-sm text-[#FFFFFFCC] appearance-none cursor-pointer focus:outline-none w-full">
+          <select className="bg-black border border-[#334155] rounded-md py-2 pl-3 min-[1920px]:py-5 pr-10 text-sm text-[#FFFFFFCC] appearance-none cursor-pointer focus:outline-none w-full">
             <option value="">{t("Start Date")}</option>
             <option value="today">{t("Today")}</option>
             <option value="yesterday">{t("Yesterday")}</option>
@@ -37,11 +38,11 @@ export default function AnalysisHeading() {
             <option value="lastMonth">{t("Last Month")}</option>
             <option value="custom">{t("Custom Date")}</option>
           </select>
-          <FiChevronDown className="absolute right-3 top-3 text-gray-400 pointer-events-none" />
+          <FiChevronDown className="absolute right-3 top-3 min-[1920px]:top-6  text-gray-400 pointer-events-none" />
         </div>
 
         <div className="relative flex-1">
-          <select className="bg-black border border-[#334155] rounded-md py-2 pl-3 pr-10 text-sm text-[#FFFFFFCC] appearance-none cursor-pointer focus:outline-none w-full">
+          <select className="bg-black border border-[#334155] rounded-md py-2 pl-3 min-[1920px]:py-5 pr-10 text-sm text-[#FFFFFFCC] appearance-none cursor-pointer focus:outline-none w-full">
             <option value="">{t("End Date")}</option>
             <option value="today">{t("Today")}</option>
             <option value="yesterday">{t("Yesterday")}</option>
@@ -51,11 +52,11 @@ export default function AnalysisHeading() {
             <option value="lastMonth">{t("Last Month")}</option>
             <option value="custom">{t("Custom Date")}</option>
           </select>
-          <FiChevronDown className="absolute right-3 top-3 text-gray-400 pointer-events-none" />
+          <FiChevronDown className="absolute right-3 top-3 min-[1920px]:top-6  text-gray-400 pointer-events-none" />
         </div>
 
         <div className="relative flex-1">
-          <select className="bg-black border border-[#334155] rounded-md py-2 pl-3 pr-10 text-sm text-[#FFFFFFCC] appearance-none cursor-pointer focus:outline-none w-full">
+          <select className="bg-black border border-[#334155] rounded-md py-2 pl-3 min-[1920px]:py-5 pr-10 text-sm text-[#FFFFFFCC] appearance-none cursor-pointer focus:outline-none w-full">
             <option value="">{t("Select User")}</option>
             <option value="allUser">{t("All Users")}</option>
             <option value="admin">{t("Admin")}</option>
@@ -63,7 +64,7 @@ export default function AnalysisHeading() {
             <option value="staff">{t("Staff")}</option>
             <option value="guest">{t("Guest")}</option>
           </select>
-          <FiChevronDown className="absolute right-3 top-3 text-gray-400 pointer-events-none" />
+          <FiChevronDown className="absolute right-3 top-3 min-[1920px]:top-6 text-gray-400 pointer-events-none" />
         </div>
       </div>
     </div>

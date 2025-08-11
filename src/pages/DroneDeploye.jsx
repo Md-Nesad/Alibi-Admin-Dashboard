@@ -6,8 +6,8 @@ import DroneMissionLogs from "../components/droneDeploy/DroneMissileLog";
 export default function DroneDeploye() {
   const [selectedUser, setSelectedUser] = useState(null);
   return (
-    <div className="mt-5">
-      <div className="grid grid-cols-3 gap-6 2xl:gap-9">
+    <div className="mt-5 2xl:mt-8">
+      <div className="grid grid-cols-3 gap-6 2xl:gap-9 2xl:mb-10">
         <div className="col-span-2">
           <MapSection />
         </div>

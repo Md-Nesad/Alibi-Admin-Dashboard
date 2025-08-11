@@ -17,14 +17,14 @@ const MonitoringTable = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center mb-5">
+      <div className="flex justify-between items-center mb-5 min-[1520px]:my-7 min-[1920px]:my-10">
         {/* Filter Buttons */}
         <div className="flex">
           {filterOptions.map((item, index, array) => (
             <button
               key={item}
               onClick={() => setFilter(item)}
-              className={`px-8 py-1.5 font-medium transition ${
+              className={`px-8 py-1.5 min-[1920px]:py-4 font-medium transition ${
                 filter === item
                   ? "bg-[#F2B100] text-white rounded-md"
                   : `bg-[#1E293B] text-[#FFFFFFB2] hover:bg-[#334155] ${
@@ -47,7 +47,7 @@ const MonitoringTable = () => {
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="w-full bg-[#090c12] border hover:bg-gray-700 border-[#334155] rounded-md py-2 pl-4 pr-10 text-sm text-[#FFFFFFCC] focus:outline-none appearance-none"
+              className="w-full bg-[#090c12] border hover:bg-gray-700 border-[#334155] rounded-md py-2 min-[1920px]:py-4 pl-4 pr-10 text-sm text-[#FFFFFFCC] focus:outline-none appearance-none"
             >
               {filterOptions.map((item) => (
                 <option key={item} value={item}>
@@ -55,16 +55,18 @@ const MonitoringTable = () => {
                 </option>
               ))}
             </select>
-            <FiChevronDown className="absolute right-3 top-3 text-gray-400 pointer-events-none" />
+            <FiChevronDown className="absolute right-3 top-3 min-[1920px]:top-5 text-gray-400 pointer-events-none" />
           </div>
         </div>
       </div>
-      <div className="bg-[#0F172A] rounded-md text-[#FFFFFFB2] w-full overflow-auto mb-10">
+      <div className="bg-[#0F172A] rounded-md text-[#FFFFFFB2] w-full overflow-auto mb-10 min-[1920px]:mb-13">
         {/* Table */}
-        <table className="min-w-full w-full text-sm text-left">
+        <table className="min-w-full w-full text-sm text-left min-[1520px]:h-[520px] min-[1920px]:h-[700px]">
           <thead className="bg-[#1E293B] text-[#FFFFFFCC]">
             <tr>
-              <th className="py-4 px-4">{t("Face ID")}</th>
+              <th className="py-4 min-[1520px]:py-5 min-[1920px]:py-7 px-4">
+                {t("Face ID")}
+              </th>
               <th className="py-4 px-4">{t("Name")}</th>
               <th className="py-4 px-4">{t("ID Number")}</th>
               <th className="py-4 px-4">{t("Check-In")}</th>

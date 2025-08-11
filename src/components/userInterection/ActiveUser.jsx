@@ -14,7 +14,7 @@ const ActiveUsers = () => {
   });
 
   return (
-    <>
+    <div>
       <div className="bg-[#0F131C] text-[#FFFFFFCC] px-4 w-full sm:w-[270px] rounded-t-md">
         <div className="relative">
           <input
@@ -30,13 +30,13 @@ const ActiveUsers = () => {
         </div>
       </div>
 
-      <div className="bg-[#0F131C] text-[#FFFFFFCC] w-full sm:w-[270px] rounded-b-md  overflow-y-auto h-[600px] matches-list mb-6 custom-scrollbar">
+      <div className="bg-[#0F131C] text-[#FFFFFFCC] w-full sm:w-[270px] rounded-b-md overflow-y-auto h-[600px] min-[1520px]:h-[650px] min-[1920px]:h-screen mb-6 min-[1920px]:mb-0 custom-scrollbar">
         {filterActiveUser.length > 0 ? (
           filterActiveUser.map((user, index) => {
             return (
               <div
                 key={index}
-                className="p-4 flex flex-col border-t border-gray-700 transition-all duration-200 hover:bg-gray-800"
+                className="px-4 py-4 min-[1920px]:py-6 flex flex-col border-t border-gray-700 transition-all duration-200 hover:bg-gray-800"
               >
                 <div className="flex items-center gap-3">
                   <img
@@ -67,7 +67,7 @@ const ActiveUsers = () => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -13,10 +13,10 @@ const ActionCard = () => {
   const [isOpen2, setIsOpen2] = useState(false);
 
   const cardBaseClasses =
-    "flex items-center justify-between gap-2 bg-[#1E293B] text-white/70 px-4 py-4 rounded-md cursor-pointer transition-all duration-200 hover:bg-[#334155] hover:text-white";
+    "flex items-center justify-between gap-2 bg-[#1E293B] text-white/70 px-4 py-4 min-[1920px]:py-7 rounded-md cursor-pointer transition-all duration-200 hover:bg-[#334155] hover:text-white";
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 min-2xl:gap-7 mb-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-5">
       {/* Deploy Drone */}
       <div
         onClick={() => navigate("/dashboard/drone_deployee")}
@@ -54,7 +54,9 @@ const ActionCard = () => {
           <span className="text-white bg-gray-600 p-2 rounded">
             <PhoneCall size={24} />
           </span>
-          <span className="text-md ml-2 font-medium">{t("Emergency Call")}</span>
+          <span className="text-md ml-2 font-medium">
+            {t("Emergency Call")}
+          </span>
         </div>
         <span className="text-[#FFFFFFB2] p-[1px] border border-gray-600 rounded">
           <ArrowUpRight />

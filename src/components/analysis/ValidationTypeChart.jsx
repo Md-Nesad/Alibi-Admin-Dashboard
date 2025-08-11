@@ -67,11 +67,11 @@ const ViolationTypeChart = () => {
   };
 
   return (
-    <div className="bg-[#0F131C] p-4 rounded-xl border border-gray-800 w-full h-[310px]">
-      <h2 className="text-[#FFFFFFCC] text-2xl font-semibold mb-5 mt-1 pl-3">
+    <div className="bg-[#0F131C] p-4 rounded-xl border border-gray-800 w-full h-[310px] min-[1520px]:h-[370px] min-[1920px]:h-[490px]">
+      <h2 className="text-[#FFFFFFCC] text-xl font-semibold mb-5 mt-1 pl-3">
         {t("Violation Type")}
       </h2>
-      <div className="h-[225px]">
+      <div className="h-[225px] min-[1520px]:h-[299px] min-[1920px]:h-[400px]">
         <Pie data={data} options={options} plugins={[centerTextPlugin]} />
       </div>
     </div>

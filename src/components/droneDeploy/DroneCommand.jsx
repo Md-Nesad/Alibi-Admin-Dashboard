@@ -85,7 +85,7 @@ export default function DroneCommandCard({
 
   return (
     <div className="bg-[#0F131C] p-2.5 border border-gray-800 rounded-lg text-white font-sans shadow-lg">
-      <div className="w-full h-60 mb-2 rounded-lg overflow-hidden">
+      <div className="w-full h-61 min-[1520px]:h-64 min-[1920px]:h-85 mb-2 rounded-lg overflow-hidden">
         <MapContainer
           center={userLocation}
           zoom={11}
@@ -119,26 +119,26 @@ export default function DroneCommandCard({
       </div>
 
       {/* Commands */}
-      <div className="border-t-2 border-gray-800 pt-5">
+      <div className="border-t-2 border-gray-800 pt-5 min-[1920px]:pt-7">
         <p className="text-center text-[#FFFFFFCC] font-medium text-lg mb-3 border-t-2 border-b border-gray-800 py-2">
           Command
         </p>
-        <div className="flex flex-col gap-2 text-[#FFFFFFB2] font-medium">
+        <div className="flex flex-col gap-2 min-[1920px]:gap-3 text-[#FFFFFFB2] font-medium">
           <button
             onClick={handleLaunch}
-            className="bg-[#17202C] hover:bg-[#232C3A] py-2 rounded-md text-sm border border-gray-700"
+            className="bg-[#17202C] hover:bg-[#232C3A] py-2 min-[1920px]:py-3 rounded-md text-sm border border-gray-700"
           >
             Launch
           </button>
           <button
             onClick={handleReturn}
-            className="bg-[#17202C] hover:bg-[#232C3A] py-2 rounded-md text-sm border border-gray-700"
+            className="bg-[#17202C] hover:bg-[#232C3A] py-2 min-[1920px]:py-3 rounded-md text-sm border border-gray-700"
           >
             Return
           </button>
           <button
             onClick={handleLock}
-            className="bg-[#17202C] hover:bg-[#232C3A] py-2 rounded-md text-sm border border-gray-700"
+            className="bg-[#17202C] hover:bg-[#232C3A] py-2 min-[1920px]:py-3 rounded-md text-sm border border-gray-700"
           >
             Lock Target
           </button>

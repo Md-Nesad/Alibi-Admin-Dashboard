@@ -9,16 +9,16 @@ export default function Overview() {
     <div>
       <DashboardStatus />
 
-      <div className="grid grid-cols-4 gap-4 mt-4 mb-8 2xl:gap-6">
+      <div className="grid grid-cols-4 gap-4 mt-4 mb-8 2xl:gap-8">
         {/* Left side: 3 column span */}
-        <div className="col-span-2 space-y-4 2xl:space-y-6">
+        <div className="col-span-2 space-y-4 2xl:space-y-9 2xl:mt-5">
           <RecentAlerts />
           <DailyComplianceChart />
           <RegionCharts />
         </div>
 
         {/* Right side: MiniMap */}
-        <div className="col-span-2">
+        <div className="col-span-2 2xl:mt-5">
           <MiniMap userLocation={[31.9632, 35.9239]} />
         </div>
       </div>

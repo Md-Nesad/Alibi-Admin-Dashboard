@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 export default function SearchBar({ searchTerm, setSearchTerm }) {
   const { t } = useTranslation();
   return (
-    <nav className="bg-[#12151C] my-6 p-4 rounded-lg shadow-md border border-gray-800">
+    <nav className="bg-[#12151C] my-6 min-[1920px]:my-10 p-4 min-[1920px]:py-7 rounded-lg shadow-md border border-gray-800">
       <div className="flex items-center">
         <h2 className="text-lg pl-5 pr-10 font-medium text-[#FFFFFFCC]">
           {t("aiIntelligenceCenter")}

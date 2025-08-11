@@ -24,7 +24,7 @@ const MatchesList = ({ searchTerm }) => {
   );
 
   return (
-    <div className="bg-[#12151C] text-[#FFFFFFCC] w-full sm:w-[260px] rounded-xl space-y-1 overflow-y-auto h-[700px] matches-list mb-6 custom-scrollbar">
+    <div className="bg-[#12151C] text-[#FFFFFFCC] w-full sm:w-[260px] rounded-t-xl overflow-y-auto h-[700px] matches-list min-[1920px]:mb-10 custom-scrollbar">
       {filteredUsers.length > 0 ? (
         filteredUsers.map((user, index) => {
           const isActive = index === activeIndex;
@@ -32,7 +32,7 @@ const MatchesList = ({ searchTerm }) => {
           return (
             <div
               key={index}
-              className={`p-4 flex flex-col gap-2 border-b border-gray-700 cursor-pointer  transition-all duration-200
+              className={`px-4 py-4 min-[1920px]:py-6 flex flex-col gap-2 border-b border-gray-700 cursor-pointer  transition-all duration-200
               ${isActive ? "bg-[#1e293b]" : "bg-[#0f172a]"}
               ${decision === "accepted" ? "border-green-500" : ""}
               ${decision === "rejected" ? "border-red-500" : ""}
@@ -43,17 +43,15 @@ const MatchesList = ({ searchTerm }) => {
                 <img
                   src={user.image}
                   alt={user.name}
-                  className="w-15 h-17 rounded-md object-cover"
+                  className="w-15 h-17 min-[1920px]:h-21 rounded-md object-cover"
                 />
-                <div>
+                <div className="">
                   <h3 className="font-semibold">{t(user.name)}</h3>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm min-[1920px]:text-lg text-gray-400">
                     {t(user.score)}
                   </p>
                   <p className="text-sm text-gray-400">{t(user.time)}</p>
-                  <p className="text-sm text-gray-400">
-                    {t(user.location)}
-                  </p>
+                  <p className="text-sm text-gray-400">{t(user.location)}</p>
                 </div>
               </div>
 

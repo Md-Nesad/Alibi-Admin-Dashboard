@@ -57,9 +57,9 @@ button {
   border-radius: 4px;
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1520px) {
   .matches-list {
-    height: auto !important;
+    height: 100% !important;
   }
 }
 

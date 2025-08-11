@@ -94,7 +94,7 @@ const Dashboard = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 ml-64 2xl:ml-66 px-6 pt-20">
+      <main className="flex-1 ml-64 2xl:ml-66 px-8 min-[1920px]:px-10 pt-20">
         <Outlet />
       </main>
     </div>

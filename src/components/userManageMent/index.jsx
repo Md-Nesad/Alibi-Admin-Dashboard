@@ -15,11 +15,11 @@ const UserManageMentTable = () => {
   };
 
   return (
-    <div className="bg-[#0F172A] rounded-md text-[#FFFFFFB2] w-full overflow-auto mb-10">
-      <table className="min-w-full w-full text-sm text-left">
+    <div className="bg-[#0F172A] rounded-md text-[#FFFFFFB2] min-[1920px]:h-[870px] min-[1920px]:mt-3 min-[1520px]:h-[600px] w-full overflow-auto mb-10">
+      <table className="min-w-full w-full text-sm text-left min-[1920px]:h-[870px] min-[1520px]:h-[600px]">
         <thead className="bg-[#1E293B] text-[#FFFFFFCC]">
           <tr>
-            <th className="py-4 px-4">{t("Face ID")}</th>
+            <th className="py-4 min-[1920px]:py-9 px-4">{t("Face ID")}</th>
             <th className="py-4 px-4">{t("Name")}</th>
             <th className="py-4 px-4">{t("Violation Type")}</th>
             <th className="py-4 px-4">{t("Region")}</th>
@@ -42,7 +42,9 @@ const UserManageMentTable = () => {
                 />
               </td>
               <td className="py-2 px-4 whitespace-nowrap">{t(user.name)}</td>
-              <td className="py-2 px-4 whitespace-nowrap">{t(user.violation)}</td>
+              <td className="py-2 px-4 whitespace-nowrap">
+                {t(user.violation)}
+              </td>
               <td className="py-2 px-4 whitespace-nowrap">{t(user.region)}</td>
               <td className="py-2 px-4 whitespace-nowrap">{t(user.date)}</td>
               <td className="py-2 max-2xl:pr-10 whitespace-nowrap">

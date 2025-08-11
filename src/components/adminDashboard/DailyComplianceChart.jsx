@@ -51,54 +51,60 @@ const formatTime = (value) => {
 const DailyComplianceChart = () => {
   const { t } = useTranslation();
   return (
-    <div className="bg-[#0F131C] pr-5 py-3 rounded-xl w-full h-[285px] border border-gray-800">
+    <div className="bg-[#0F131C] pr-5 py-3 rounded-xl w-full h-[285px] min-[1920px]:h-[399px] border border-gray-800">
       <h2 className="text-[#FFFFFFCC] text-lg mb-6 ml-6 font-medium">
         {t("Daily Compliance")}
       </h2>
-      <ResponsiveContainer width="100%" height={205}>
-        <AreaChart
-          data={data}
-          margin={{ top: 0, right: 0, left: -14, bottom: 0 }}
-        >
-          <CartesianGrid stroke="#333" strokeDasharray="0 0" vertical={false} />
-          <XAxis
-            dataKey="x"
-            domain={[10, 100]}
-            ticks={[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}
-            tickFormatter={formatTime}
-            tick={{
-              fill: "#FFFFFF80",
-              fontWeight: "500",
-              fontSize: 12,
-              dy: 7,
-              dx: 10,
-            }}
-            axisLine={false}
-            tickLine={false}
-          />
-          <YAxis
-            strokeOpacity={0}
-            domain={[25, 100]}
-            ticks={[25, 50, 75, 100]}
-            tickFormatter={(value) => `${value}%`}
-            tick={{ fill: "#FFFFFF80", fontWeight: "500", fontSize: 12 }}
-            dy={-2}
-          />
-          <Tooltip
-            content={<CustomTooltip />}
-            contentStyle={{ backgroundColor: "#1F212C", borderColor: "#333" }}
-          />
-          <Area
-            type="basis"
-            dataKey="y"
-            stroke="#FFD700"
-            strokeWidth={3}
-            fill="#FFD700"
-            fillOpacity={0.1}
-            isAnimationActive={true}
-          />
-        </AreaChart>
-      </ResponsiveContainer>
+      <div className="min-[1920px]:h-[310px] h-[205px]">
+        <ResponsiveContainer width="100%">
+          <AreaChart
+            data={data}
+            margin={{ top: 0, right: 0, left: -14, bottom: 0 }}
+          >
+            <CartesianGrid
+              stroke="#333"
+              strokeDasharray="0 0"
+              vertical={false}
+            />
+            <XAxis
+              dataKey="x"
+              domain={[10, 100]}
+              ticks={[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}
+              tickFormatter={formatTime}
+              tick={{
+                fill: "#FFFFFF80",
+                fontWeight: "500",
+                fontSize: 12,
+                dy: 7,
+                dx: 10,
+              }}
+              axisLine={false}
+              tickLine={false}
+            />
+            <YAxis
+              strokeOpacity={0}
+              domain={[25, 100]}
+              ticks={[25, 50, 75, 100]}
+              tickFormatter={(value) => `${value}%`}
+              tick={{ fill: "#FFFFFF80", fontWeight: "500", fontSize: 12 }}
+              dy={-2}
+            />
+            <Tooltip
+              content={<CustomTooltip />}
+              contentStyle={{ backgroundColor: "#1F212C", borderColor: "#333" }}
+            />
+            <Area
+              type="basis"
+              dataKey="y"
+              stroke="#FFD700"
+              strokeWidth={3}
+              fill="#FFD700"
+              fillOpacity={0.1}
+              isAnimationActive={true}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };

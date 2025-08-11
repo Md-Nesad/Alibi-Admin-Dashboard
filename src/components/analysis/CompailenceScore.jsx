@@ -97,15 +97,12 @@ export default function ComplianceScore() {
   };
 
   return (
-    <div
-      className="bg-[#0F131C] rounded-xl border border-gray-800 p-4 w-full shadow-sm"
-      style={{ height: 310 }}
-    >
+    <div className="bg-[#0F131C] rounded-xl border border-gray-800 p-4 w-full shadow-sm h-[310px] min-[1520px]:h-[370px] min-[1920px]:h-[490px]">
       <h2 className="text-[#FFFFFFCC] text-lg mb-2 ml-2 font-medium">
         {t("Compliance Score")}
       </h2>
       <div className="mb-2" />
-      <div style={{ height: 240 }}>
+      <div className="h-[245px] min-[1520px]:h-[299px] min-[1920px]:h-[400px]">
         <Bar data={chartData} options={options} />
       </div>
     </div>

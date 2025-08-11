@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 export default function TamperAlertCard() {
   const { t } = useTranslation();
   return (
-    <div className="bg-[#0F172A] border border-gray-800 rounded-md px-4 py-2 text-white w-full flex flex-col gap-4 md:grid md:grid-cols-4 md:gap-4 mb-15">
+    <div className="bg-[#0F172A] border border-gray-800 rounded-md px-4 py-2 min-[1920px]:py-5 text-white w-full flex flex-col gap-4 md:grid md:grid-cols-4 md:gap-4 mb-15">
       {/* Left icon */}
       <div className="text-yellow-400 flex items-center gap-4 border-b md:border-b-0 md:border-r border-gray-700 pb-4 md:pb-0 md:pr-6 ">
         <AlertTriangle size={44} />
@@ -33,7 +33,9 @@ export default function TamperAlertCard() {
             {t("Amman, Jordan")}
           </div>
           <div>
-            <span className="text-white font-medium">{t("Time of Detection")}:</span>{" "}
+            <span className="text-white font-medium">
+              {t("Time of Detection")}:
+            </span>{" "}
             {t("14 minutes ago")}
           </div>
         </div>

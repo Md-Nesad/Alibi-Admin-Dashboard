@@ -35,15 +35,15 @@ export default function DroneMissionLogs() {
   };
 
   return (
-    <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-lg w-full mx-auto border border-gray-800">
-      <h2 className="text-lg font-semibold pl-4 py-3 border-b border-gray-800">
+    <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-lg w-full mx-auto border border-gray-800 ">
+      <h2 className="text-lg font-semibold pl-4 py-3 min-[1920px]:py-7 border-b border-gray-800">
         Drone Mission Logs
       </h2>
       <div className="overflow-x-auto">
-        <table className="w-full text-sm max-2xl:text-[12.3px]">
+        <table className="w-full text-sm max-2xl:text-[12.3px] min-[1920px]:h-120">
           <thead>
             <tr>
-              <th className="px-4 py-3 text-left">Mission ID</th>
+              <th className="px-4 py-3 min-[1920px]:py-7 text-left">Mission ID</th>
               <th className="px-4 py-3 text-left">Drone Name</th>
               <th className="px-4 py-3 text-left">Operator</th>
               <th className="px-4 py-3 text-left">Location</th>

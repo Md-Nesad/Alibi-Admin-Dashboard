@@ -62,7 +62,7 @@ export default function IncomeOverTimeChart() {
       },
     },
     layout: {
-      padding: { top: 10, right: 10, left: 10, bottom: 0 },
+      padding: { top: 10, right: 10, left: 10, bottom: -5 },
     },
     scales: {
       x: {
@@ -94,15 +94,12 @@ export default function IncomeOverTimeChart() {
   };
 
   return (
-    <div
-      className="bg-[#0F131C] rounded-xl border border-gray-800 p-4 w-full shadow-sm"
-      style={{ height: 287 }}
-    >
+    <div className="bg-[#0F131C] rounded-xl border border-gray-800 px-4 pt-4 w-full h-[287px] min-[1920px]:h-[399px] shadow-sm">
       <h2 className="text-[#FFFFFFCC] text-lg mb-2 ml-2 font-medium">
         {t("Missed Check-ins per Region")}
       </h2>
-      <div className="mb-2" />
-      <div style={{ height: 230 }}>
+      <div className="" />
+      <div className="h-[230px] min-[1920px]:h-[315px]">
         <Bar data={chartData} options={options} />
       </div>
     </div>
