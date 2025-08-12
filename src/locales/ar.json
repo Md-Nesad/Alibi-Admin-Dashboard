@@ -408,5 +408,13 @@
   "Yousuf Barkani": "يوسف بركاني",
   "Open": "فتح",
   "Ignore": "تجاهل",
-  "Close": "إغلاق"
+  "Close": "إغلاق",
+  "Approved Successfully": "تمت الموافقة بنجاح",
+  "Profile Updated": "تحديث الملف الشخصي",
+  "Approve": "موافقة",
+  "Open File": "فتح الملف",
+  "Message": "رسالة",
+  "Video Call": "مكالمة فيديو",
+  "✅ You accepted this user": "✅ لقد قبلت هذا المستخدم",
+  "❌ You rejected this user": "❌ لقد رفضت هذا المستخدم"
 }

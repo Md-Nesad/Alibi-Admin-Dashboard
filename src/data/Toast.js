@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 
-export const approve = () => setTimeout(() => toast.success("Approved"), 500);
+export const approve = (message) =>
+  setTimeout(() => toast.success(message), 500);
 
 export const message = () =>
   setTimeout(() => toast.success("Message Sent"), 500);
@@ -10,4 +11,4 @@ export const openFolder = () =>
 
 export const successMessage = (message) => toast.success(message);
 
-export const editProfileMessage = () => toast.success("Profile Updated");
+export const editProfileMessage = (message) => toast.success(message);

@@ -65,23 +65,26 @@ export default function RecentAlerts() {
                   </td>
                   <td className="px-3 py-1">
                     <div className="flex gap-2 2xl:gap-5 2xl:justify-center">
-                      <button title="Approve" onClick={approve}>
+                      <button
+                        title={t("Approve")}
+                        onClick={() => approve(t("Approved Successfully"))}
+                      >
                         <Approve className="text-green-500 w-5 h-5" />
                       </button>
                       <button
                         onClick={() => setSelectedFile(alert)}
-                        title="Open File"
+                        title={t("Open File")}
                       >
                         <File className="text-purple-500 w-5 h-5" />
                       </button>
                       <button
-                        title="Message"
+                        title={t("Message")}
                         onClick={() => setSelectedChatUser(alert)}
                       >
                         <Message className="text-yellow-400 w-5 h-5" />
                       </button>
                       <button
-                        title="Video Call"
+                        title={t("Video Call")}
                         onClick={() => setSelectedVideoUser(alert)}
                       >
                         <VidoeCall className="text-yellow-400 w-5 h-5" />

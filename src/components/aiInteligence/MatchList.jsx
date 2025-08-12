@@ -88,8 +88,8 @@ const MatchesList = ({ searchTerm }) => {
                       }`}
                     >
                       {decision === "accepted"
-                        ? "✅ You accepted this user"
-                        : "❌ You rejected this user"}
+                        ? t("✅ You accepted this user")
+                        : t("❌ You rejected this user")}
                     </div>
                   )}
                 </>

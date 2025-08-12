@@ -23,7 +23,7 @@ const EditProfileModal = ({ onClose }) => {
   const handleSubmit = () => {
     setLoading(true);
     setTimeout(() => {
-      editProfileMessage();
+      editProfileMessage(t("Profile Updated"));
       setLoading(false);
       onClose();
     }, 1000);

@@ -14,7 +14,7 @@ export default function RecentAlertChatModal({ user, onClose }) {
 
     if (messageText.trim()) {
       setTimeout(() => {
-        alert(t("thankYouMessage", { name: user.name }));
+        alert(t("thankYouMessage", { name: t(user.name) }));
       }, 1000);
       setMessageText("");
       onClose();
