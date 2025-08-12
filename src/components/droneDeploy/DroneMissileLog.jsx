@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { FaPlay, FaDownload } from "react-icons/fa";
 import { logs } from "../../data/Logs";
+import { useTranslation } from "react-i18next";
 
 export default function DroneMissionLogs() {
   const [showPlayer, setShowPlayer] = useState(false);
   const [selectedMission, setSelectedMission] = useState(null);
+  const { t } = useTranslation();
 
   const outcomeColors = {
     Success: "text-green-400",
@@ -37,22 +39,24 @@ export default function DroneMissionLogs() {
   return (
     <div className="bg-[#0F131C] text-[#FFFFFFCC] rounded-lg w-full mx-auto border border-gray-800 ">
       <h2 className="text-lg font-semibold pl-4 py-3 min-[1920px]:py-7 border-b border-gray-800">
-        Drone Mission Logs
+        {t("Drone Mission Logs")}
       </h2>
       <div className="overflow-x-auto">
         <table className="w-full text-sm max-2xl:text-[12.3px] min-[1920px]:h-120">
           <thead>
             <tr>
-              <th className="px-4 py-3 min-[1920px]:py-7 text-left">Mission ID</th>
-              <th className="px-4 py-3 text-left">Drone Name</th>
-              <th className="px-4 py-3 text-left">Operator</th>
-              <th className="px-4 py-3 text-left">Location</th>
-              <th className="px-4 py-3 text-left">Start Time</th>
-              <th className="px-4 py-3 text-left">End Time</th>
-              <th className="px-4 py-3 text-left">Duration</th>
-              <th className="px-4 py-3 text-left">Outcome</th>
-              <th className="px-4 py-3 text-left">Remark</th>
-              <th className="px-4 py-3 text-left">Action</th>
+              <th className="px-4 py-3 min-[1920px]:py-7 text-left">
+                {t("Mission ID")}
+              </th>
+              <th className="px-4 py-3 text-left">{t("Drone Name")}</th>
+              <th className="px-4 py-3 text-left">{t("Operator")}</th>
+              <th className="px-4 py-3 text-left">{t("Location")}</th>
+              <th className="px-4 py-3 text-left">{t("Start Time")}</th>
+              <th className="px-4 py-3 text-left">{t("End Time")}</th>
+              <th className="px-4 py-3 text-left">{t("Duration")}</th>
+              <th className="px-4 py-3 text-left">{t("Outcome")}</th>
+              <th className="px-4 py-3 text-left">{t("Remark")}</th>
+              <th className="px-4 py-3 text-left">{t("Action")}</th>
             </tr>
           </thead>
           <tbody>
@@ -61,21 +65,21 @@ export default function DroneMissionLogs() {
                 key={idx}
                 className="border-t border-gray-800 hover:bg-[#171c29]"
               >
-                <td className="px-4 py-3">{log.missionId}</td>
-                <td className="px-4 py-3">{log.droneName}</td>
-                <td className="px-4 py-3">{log.operator}</td>
-                <td className="px-4 py-3">{log.location}</td>
-                <td className="px-4 py-3">{log.startTime}</td>
-                <td className="px-4 py-3">{log.endTime}</td>
-                <td className="px-4 py-3">{log.duration}</td>
+                <td className="px-4 py-3">{t(log.missionId)}</td>
+                <td className="px-4 py-3">{t(log.droneName)}</td>
+                <td className="px-4 py-3">{t(log.operator)}</td>
+                <td className="px-4 py-3">{t(log.location)}</td>
+                <td className="px-4 py-3">{t(log.startTime)}</td>
+                <td className="px-4 py-3">{t(log.endTime)}</td>
+                <td className="px-4 py-3">{t(log.duration)}</td>
                 <td
                   className={`px-4 py-3 font-medium opacity-80 ${
                     outcomeColors[log.outcome]
                   }`}
                 >
-                  {log.outcome}
+                  {t(log.outcome)}
                 </td>
-                <td className="px-4 py-3">{log.remark}</td>
+                <td className="px-4 py-3">{t(log.remark)}</td>
                 <td className="px-4 py-3 flex items-center gap-3">
                   <button
                     onClick={() => handleDownload(log)}

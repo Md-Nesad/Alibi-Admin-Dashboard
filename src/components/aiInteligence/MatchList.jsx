@@ -24,7 +24,7 @@ const MatchesList = ({ searchTerm }) => {
   );
 
   return (
-    <div className="bg-[#12151C] text-[#FFFFFFCC] w-full sm:w-[260px] rounded-t-xl overflow-y-auto h-[700px] matches-list min-[1920px]:mb-10 custom-scrollbar">
+    <div className="bg-[#12151C] text-[#FFFFFFCC] w-full sm:w-[260px] rounded-t-xl overflow-y-auto h-[700px] matches-list max-2xl:mb-5 min-[1920px]:mb-10 custom-scrollbar">
       {filteredUsers.length > 0 ? (
         filteredUsers.map((user, index) => {
           const isActive = index === activeIndex;

@@ -10,46 +10,46 @@ import {
 import CustomTooltip from "./CustomTooltip";
 import { useTranslation } from "react-i18next";
 
-const data = [
-  { x: 10, y: 40 },
-  { x: 10, y: 30 },
-  { x: 20, y: 60 },
-  { x: 25, y: 37 },
-  { x: 30, y: 70 },
-  { x: 35, y: 50 },
-  { x: 40, y: 50 },
-  { x: 45, y: 70 },
-  { x: 50, y: 47 },
-  { x: 55, y: 80 },
-  { x: 60, y: 60 },
-  { x: 65, y: 60 },
-  { x: 70, y: 90 },
-  { x: 75, y: 67 },
-  { x: 80, y: 77 },
-  { x: 85, y: 70 },
-  { x: 90, y: 65 },
-  { x: 95, y: 60 },
-  { x: 100, y: 80 },
-];
-
-const formatTime = (value) => {
-  const timeMap = {
-    10: "6am",
-    20: "9am",
-    30: "11am",
-    40: "1pm",
-    50: "3pm",
-    60: "5pm",
-    70: "7pm",
-    80: "9pm",
-    90: "11pm",
-    100: "12am",
-  };
-  return timeMap[value] || value;
-};
-
 const DailyComplianceChart = () => {
   const { t } = useTranslation();
+
+  const data = [
+    { x: 10, y: 40 },
+    { x: 10, y: 30 },
+    { x: 20, y: 60 },
+    { x: 25, y: 37 },
+    { x: 30, y: 70 },
+    { x: 35, y: 50 },
+    { x: 40, y: 50 },
+    { x: 45, y: 70 },
+    { x: 50, y: 47 },
+    { x: 55, y: 80 },
+    { x: 60, y: 60 },
+    { x: 65, y: 60 },
+    { x: 70, y: 90 },
+    { x: 75, y: 67 },
+    { x: 80, y: 77 },
+    { x: 85, y: 70 },
+    { x: 90, y: 65 },
+    { x: 95, y: 60 },
+    { x: 100, y: 80 },
+  ];
+
+  const formatTime = (value) => {
+    const timeMap = {
+      10: "6am",
+      20: "9am",
+      30: "11am",
+      40: "1pm",
+      50: "3pm",
+      60: "5pm",
+      70: "7pm",
+      80: "9pm",
+      90: "11pm",
+      100: "12pm",
+    };
+    return timeMap[value] || value;
+  };
   return (
     <div className="bg-[#0F131C] pr-5 py-3 rounded-xl w-full h-[285px] min-[1920px]:h-[399px] border border-gray-800">
       <h2 className="text-[#FFFFFFCC] text-lg mb-6 ml-6 font-medium">

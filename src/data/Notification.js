@@ -9,7 +9,7 @@ export const notifications = [
   {
     id: 2,
     title: "New Mission Assigned",
-    message: `Complete User Profile" mission added.`,
+    message: `"Complete User Profile" mission added.`,
     time: "5 min ago",
     icon: "user",
   },

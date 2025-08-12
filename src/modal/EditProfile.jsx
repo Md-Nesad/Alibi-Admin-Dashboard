@@ -1,8 +1,11 @@
 import { useState } from "react";
 import adminImage from "../assets/images/admin.png";
+import { useTranslation } from "react-i18next";
 import { editProfileMessage } from "../data/Toast";
 
 const EditProfileModal = ({ onClose }) => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "Admin",
     email: "info.alibili@gmail.com",
@@ -56,37 +59,37 @@ const EditProfileModal = ({ onClose }) => {
         {/* Fields */}
         <div className="grid grid-cols-2 gap-3 text-sm mb-6">
           <Field
-            label="Name"
+            label={t("Name")}
             name="name"
             value={formData.name}
             onChange={handleChange}
           />
           <Field
-            label="Email"
+            label={t("Email")}
             name="email"
             value={formData.email}
             onChange={handleChange}
           />
           <Field
-            label="Phone"
+            label={t("Phone")}
             name="phone"
             value={formData.phone}
             onChange={handleChange}
           />
           <Field
-            label="Gender"
+            label={t("Gender")}
             name="gender"
             value={formData.gender}
             onChange={handleChange}
           />
           <Field
-            label="Date of Birth"
+            label={t("Date of Birth")}
             name="dob"
             value={formData.dob}
             onChange={handleChange}
           />
           <Field
-            label="Address"
+            label={t("Address")}
             name="address"
             value={formData.address}
             onChange={handleChange}
@@ -98,7 +101,7 @@ const EditProfileModal = ({ onClose }) => {
           className="w-full bg-[#17202C] py-2 px-4 border text-[#FFFFFFCC] border-gray-700 rounded hover:bg-[#1f2a38]"
           onClick={handleSubmit}
         >
-          {loading ? "updating..." : "Edit Profile"}
+          {loading ? t("updating...") : t("Edit Profile")}
         </button>
       </div>
     </div>

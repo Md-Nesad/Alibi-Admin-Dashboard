@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const RecentAlertModal = ({ user, onClose }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="fixed inset-0 z-1005 flex items-center justify-center">
       {/* Backdrop */}
@@ -21,25 +25,25 @@ const RecentAlertModal = ({ user, onClose }) => {
         <div className="flex justify-center mb-4">
           <img
             src={user.avatar}
-            alt="Profile"
+            alt={t("Profile")}
             className="w-20 h-20 rounded-full border-2 object-cover border-white"
           />
         </div>
 
         {/* Fields */}
         <div className="grid grid-cols-2 gap-3 text-sm">
-          <Field label="Name" value={user.name} />
-          <Field label="Role" value="User" />
-          <Field label="Status" value="Failed Check-In" />
-          <Field label="User ID" value="DRN-02568" />
-          <Field label="Alert Type" value="Failed Check-In" />
-          <Field label="Date & Time" value="01 Aug 2025, 14:32 PM" />
-          <Field label="Location" value="3rd Circle, Amman, Jordan" />
-          <Field label="Device ID" value="XAI2025" />
-          <Field label="Last Login" value="01 Aug 2025, 14:25 PM" />
-          <Field label="Last Location" value="2nd Circle, Amman, Jordan" />
-          <Field label="Total Alerts (Last 30 Days)" value="4" />
-          <Field label="Flagged Violations" value="2" />
+          <Field label={t("Name")} value={t(user.name)} />
+          <Field label={t("Role")} value={t("User")} />
+          <Field label={t("Status")} value={t("Failed Check-In")} />
+          <Field label={t("User ID")} value="DRN-02568" />
+          <Field label={t("Alert Type")} value={t("Failed Check-In")} />
+          <Field label={t("Date & Time")} value="01 Aug 2025, 14:32 PM" />
+          <Field label={t("Location")} value="3rd Circle, Amman, Jordan" />
+          <Field label={t("Device ID")} value="XAI2025" />
+          <Field label={t("Last Login")} value="01 Aug 2025, 14:25 PM" />
+          <Field label={t("Last Location")} value="2nd Circle, Amman, Jordan" />
+          <Field label={t("Total Alerts (Last 30 Days)")} value="4" />
+          <Field label={t("Flagged Violations")} value="2" />
         </div>
       </div>
     </div>

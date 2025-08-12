@@ -1,17 +1,14 @@
 import { X } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function RecentAlertVideoCallModal({ user, onClose }) {
+  const { t } = useTranslation();
   const [isMuted, setIsMuted] = useState(false);
   const [cameraOn, setCameraOn] = useState(true);
 
-  const toggleMute = () => {
-    setIsMuted((prev) => !prev);
-  };
-
-  const toggleCamera = () => {
-    setCameraOn((prev) => !prev);
-  };
+  const toggleMute = () => setIsMuted((prev) => !prev);
+  const toggleCamera = () => setCameraOn((prev) => !prev);
 
   return (
     <div className="fixed inset-0 bg-black/50 z-1005 flex items-center justify-center animate-backdrop">
@@ -24,7 +21,7 @@ export default function RecentAlertVideoCallModal({ user, onClose }) {
         </button>
 
         <h3 className="text-[#F2B100] text-lg text-center font-semibold mb-3">
-          Video Call with {user.name}
+          {t("videoCallWith", { name: t(user.name) })}
         </h3>
 
         <div className="flex flex-col items-center gap-4">
@@ -35,7 +32,7 @@ export default function RecentAlertVideoCallModal({ user, onClose }) {
           />
 
           <div className="w-full h-40 bg-black border border-gray-600 rounded flex items-center justify-center text-gray-400 text-sm">
-            {cameraOn ? "🔴 Live Video Stream..." : "📷 Camera is Off"}
+            {cameraOn ? t("liveVideoStream") : t("cameraOff")}
           </div>
 
           <div className="flex gap-3 mt-4">
@@ -44,7 +41,7 @@ export default function RecentAlertVideoCallModal({ user, onClose }) {
               className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-white font-medium"
               onClick={onClose}
             >
-              End Call
+              {t("endCall")}
             </button>
 
             {/* Mute */}
@@ -54,7 +51,7 @@ export default function RecentAlertVideoCallModal({ user, onClose }) {
                 isMuted ? "bg-yellow-700" : "bg-gray-600"
               } hover:bg-gray-700 px-4 py-2 rounded text-white font-medium`}
             >
-              {isMuted ? "Unmute" : "Mute"}
+              {isMuted ? t("unmute") : t("mute")}
             </button>
 
             {/* Toggle Camera */}
@@ -64,7 +61,7 @@ export default function RecentAlertVideoCallModal({ user, onClose }) {
                 !cameraOn ? "bg-yellow-700" : "bg-gray-600"
               } hover:bg-gray-700 px-4 py-2 rounded text-white font-medium`}
             >
-              {cameraOn ? "Turn Camera Off" : "Turn Camera On"}
+              {cameraOn ? t("turnCameraOff") : t("turnCameraOn")}
             </button>
           </div>
         </div>

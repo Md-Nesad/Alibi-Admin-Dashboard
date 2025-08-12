@@ -1,20 +1,20 @@
 import { X } from "lucide-react";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function RecentAlertChatModal({ user, onClose }) {
+  const { t } = useTranslation();
   const [messageText, setMessageText] = useState("");
 
   const handleSend = () => {
     if (!messageText.trim()) {
-      alert("Please enter a message before sending.");
+      alert(t("pleaseEnterMessage"));
       return;
     }
 
     if (messageText.trim()) {
       setTimeout(() => {
-        alert(
-          `Thank you for chatting with ${user.name}. Message send to ${user.name}`
-        );
+        alert(t("thankYouMessage", { name: user.name }));
       }, 1000);
       setMessageText("");
       onClose();
@@ -31,23 +31,23 @@ export default function RecentAlertChatModal({ user, onClose }) {
           <X size={20} />
         </button>
         <h3 className="text-[#FFFFFFB2] text-lg font-semibold mb-2">
-          Chat with {user.name}
+          {t("chatWith", { name: t(user.name) })}
         </h3>
         <div className="text-sm text-gray-300 mb-4">
-          Start a conversation with {user.name}.
+          {t("startConversation", { name: t(user.name) })}
         </div>
         <textarea
           rows={4}
           className="w-full p-2 rounded bg-[#0F131C] text-[#FFFFFFB2] resize-none border border-gray-600"
           value={messageText}
           onChange={(e) => setMessageText(e.target.value)}
-          placeholder="Type your message..."
+          placeholder={t("typeMessage")}
         />
         <button
           onClick={handleSend}
           className="mt-3 w-full py-2 bg-[#F2B100] hover:bg-yellow-600 text-white font-semibold rounded"
         >
-          Send
+          {t("send")}
         </button>
       </div>
     </div>

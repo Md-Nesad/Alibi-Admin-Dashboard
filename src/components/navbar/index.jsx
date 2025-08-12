@@ -106,7 +106,7 @@ const DashboardMenu = () => {
                     onClick={() => setIsEditOpen(true)}
                     className="block w-full py-2 text-start pl-4 hover:bg-[#1b212f]  hover:rounded-md"
                   >
-                    Profile
+                    {t("Profile")}
                   </button>
 
                   {/* Language Toggle Switch */}
@@ -142,7 +142,7 @@ const DashboardMenu = () => {
                     to="/login"
                     className="block px-4 py-2 hover:bg-[#1b212f]  hover:rounded-md"
                   >
-                    Logout
+                    {t("Logout")}
                   </Link>
                 </div>
               )}

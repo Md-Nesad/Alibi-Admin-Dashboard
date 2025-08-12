@@ -1,19 +1,19 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { Image, Location } from "../../assets/icons/Chat";
 import { useTranslation } from "react-i18next";
 
 export default function ChatUI() {
   const { t } = useTranslation();
   const [messages, setMessages] = useState([
-    { text: "Hello", sender: "left", time: "11:15 am" },
-    { text: "Please send a photo", sender: "right", time: "11:17 am" },
+    { text: t("Hello"), sender: "left", time: "11:15 am" },
+    { text: t("Please send a photo"), sender: "right", time: "11:17 am" },
     {
-      text: "Okay, I am going to send you a photo",
+      text: t("Okay, I am going to send you a photo"),
       sender: "left",
       time: "11:18 am",
     },
     {
-      text: "Ok, I am waiting for your photo",
+      text: t("Ok, I am waiting for your photo"),
       sender: "right",
       time: "11:20 am",
     },
@@ -42,7 +42,7 @@ export default function ChatUI() {
       setMessages((prev) => [
         ...prev,
         {
-          text: "Got it! I will send it soon.",
+          text: t("Got it! I will send it soon."),
           sender: "left",
           time: getCurrentTime(),
         },
@@ -77,7 +77,7 @@ export default function ChatUI() {
                     : "bg-[#202225] text-gray-200"
                 } rounded-md px-3 py-2 inline-block text-[16px]`}
               >
-                {msg.text}
+                {t(msg.text)}
               </p>
               <p className="text-[11px] text-gray-500 mt-0.5">{msg.time}</p>
             </div>

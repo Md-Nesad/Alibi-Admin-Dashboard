@@ -9,6 +9,7 @@ import {
 import L from "leaflet";
 import droneIconUrl from "../../assets/images/Group 754.png";
 import targetIconUrl from "../../assets/images/image1.png";
+import { useTranslation } from "react-i18next";
 
 // Helper function: create icon with label
 const createImageIconWithLabel = (imgUrl, label = "", size = 20) => {
@@ -56,6 +57,7 @@ export default function DroneCommandCard({
 }) {
   const [dronePos, setDronePos] = useState(dronePosition);
   const [lockTarget, setLockTarget] = useState(false);
+  const { t } = useTranslation();
 
   const droneLeafletIcon = createImageIconWithLabel(
     droneIconUrl,
@@ -121,26 +123,26 @@ export default function DroneCommandCard({
       {/* Commands */}
       <div className="border-t-2 border-gray-800 pt-5 min-[1920px]:pt-7">
         <p className="text-center text-[#FFFFFFCC] font-medium text-lg mb-3 border-t-2 border-b border-gray-800 py-2">
-          Command
+          {t("Command")}
         </p>
         <div className="flex flex-col gap-2 min-[1920px]:gap-3 text-[#FFFFFFB2] font-medium">
           <button
             onClick={handleLaunch}
             className="bg-[#17202C] hover:bg-[#232C3A] py-2 min-[1920px]:py-3 rounded-md text-sm border border-gray-700"
           >
-            Launch
+            {t("Launch")}
           </button>
           <button
             onClick={handleReturn}
             className="bg-[#17202C] hover:bg-[#232C3A] py-2 min-[1920px]:py-3 rounded-md text-sm border border-gray-700"
           >
-            Return
+            {t("Return")}
           </button>
           <button
             onClick={handleLock}
             className="bg-[#17202C] hover:bg-[#232C3A] py-2 min-[1920px]:py-3 rounded-md text-sm border border-gray-700"
           >
-            Lock Target
+            {t("Lock Target")}
           </button>
         </div>
       </div>
