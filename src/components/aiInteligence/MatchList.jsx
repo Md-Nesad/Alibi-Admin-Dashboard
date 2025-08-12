@@ -99,7 +99,7 @@ const MatchesList = ({ searchTerm }) => {
         })
       ) : (
         <div className="text-white text-center text-md mt-5 font-semibold">
-          ❌ No matches found!
+          ❌ {t("No matches found!")}
         </div>
       )}
     </div>
