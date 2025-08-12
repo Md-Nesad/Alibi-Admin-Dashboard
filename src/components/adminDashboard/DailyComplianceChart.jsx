@@ -37,16 +37,16 @@ const DailyComplianceChart = () => {
 
   const formatTime = (value) => {
     const timeMap = {
-      10: "6am",
-      20: "9am",
-      30: "11am",
-      40: "1pm",
-      50: "3pm",
-      60: "5pm",
-      70: "7pm",
-      80: "9pm",
-      90: "11pm",
-      100: "12pm",
+      10: t("6am"),
+      20: t("9am"),
+      30: t("11am"),
+      40: t("1pm"),
+      50: t("3pm"),
+      60: t("5pm"),
+      70: t("7pm"),
+      80: t("9pm"),
+      90: t("11pm"),
+      100: t("12am"),
     };
     return timeMap[value] || value;
   };
@@ -85,7 +85,7 @@ const DailyComplianceChart = () => {
               strokeOpacity={0}
               domain={[25, 100]}
               ticks={[25, 50, 75, 100]}
-              tickFormatter={(value) => `${value}%`}
+              tickFormatter={(value) => `${t(value.toString())}%`}
               tick={{ fill: "#FFFFFF80", fontWeight: "500", fontSize: 12 }}
               dy={-2}
             />

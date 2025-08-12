@@ -69,7 +69,7 @@ const DashboardMenu = () => {
             >
               <Bell className="text-white" size={24} />
               <span className="absolute top-2 right-2 min-w-[16px] h-4 px-1 text-[8px] flex items-center justify-center rounded-full bg-red-500 text-black ring-2 ring-[#17202C]">
-                6
+                {t("6")}
               </span>
             </button>
 

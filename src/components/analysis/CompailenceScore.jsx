@@ -87,10 +87,8 @@ export default function ComplianceScore() {
           color: "#FFFFFF80",
           font: { size: 13, family: "Inter, sans-serif" },
           stepSize: 2,
-          callback: function (value) {
-            return value;
-          },
           padding: 8,
+          callback: (value) => t(value.toString()),
         },
       },
     },

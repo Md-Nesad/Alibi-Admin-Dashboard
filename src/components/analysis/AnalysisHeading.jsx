@@ -14,11 +14,11 @@ export default function AnalysisHeading() {
         <div className="relative">
           <select className="bg-black border border-[#334155] rounded-md py-2 pl-3 pr-10 text-sm text-[#FFFFFFCC] appearance-none cursor-pointer focus:outline-none">
             <option value="">{t("Export Type")}</option>
-            <option value="pdf">PDF</option>
-            <option value="csv">CSV</option>
-            <option value="excel">Excel (XLSX)</option>
-            <option value="json">JSON</option>
-            <option value="xml">XML</option>
+            <option value="pdf">{t("PDF")}</option>
+            <option value="csv">{t("CSV")}</option>
+            <option value="excel">{t("Excel (XLSX)")}</option>
+            <option value="json">{t("JSON")}</option>
+            <option value="xml">{t("XML")}</option>
             <option value="png">{t("Image (PNG)")}</option>
           </select>
           <FiChevronDown className="absolute right-2 top-3 text-gray-400 pointer-events-none" />

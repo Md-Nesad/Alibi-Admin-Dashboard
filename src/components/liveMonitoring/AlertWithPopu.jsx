@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-const AlertWithPopup = ({ user, onClose }) => {
+const AlertWithPopup = () => {
+  const { t } = useTranslation();
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
 
@@ -22,16 +24,16 @@ const AlertWithPopup = ({ user, onClose }) => {
             onClick={() => navigate("/dashboard/user_management")}
             className="w-full text-left px-4 py-2 transition"
           >
-            Open
+            {t("Open")}
           </button>
           <button className="w-full text-left px-4 py-2 hover:bg-[#1E293B] transition">
-            Ignore
+            {t("Ignore")}
           </button>
           <button
             onClick={() => setShowPopup(false)}
             className="w-full text-left px-4 py-2 hover:bg-[#1E293Btransition"
           >
-            Close
+            {t("Close")}
           </button>
         </div>
       )}

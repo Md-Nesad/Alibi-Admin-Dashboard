@@ -61,27 +61,27 @@ export default function DroneCommandCard({
 
   const droneLeafletIcon = createImageIconWithLabel(
     droneIconUrl,
-    "B21 Bomber",
+    t("B21 Bomber"),
     25
   );
   const targetLeafletIcon = createImageIconWithLabel(
     targetIconUrl,
-    "Yousuf Barkani",
+    t("Yousuf Barkani"),
     25
   );
 
   const handleLaunch = () => {
-    alert("🚀 Drone launched!");
+    alert(t("🚀 Drone launched!"));
     animateMovement(dronePos, targetPosition, setDronePos, 0.001);
   };
 
   const handleReturn = () => {
-    alert("↩ Returning to base...");
+    alert(t("↩ Returning to base..."));
     animateMovement(dronePos, userLocation, setDronePos, 0.001);
   };
 
   const handleLock = () => {
-    alert("🎯 Target locked!");
+    alert(t("🎯 Target locked!"));
     setLockTarget(true);
   };
 

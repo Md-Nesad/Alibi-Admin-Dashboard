@@ -88,6 +88,7 @@ export default function IncomeOverTimeChart() {
           stepSize: 3,
           callback: (value) => value,
           padding: 8,
+          callback: (value) => t(value.toString()),
         },
       },
     },

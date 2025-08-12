@@ -1,16 +1,19 @@
+import { useTranslation } from "react-i18next";
+
 const CustomTooltip = ({ active, payload, label }) => {
+  const { t } = useTranslation();
   if (active && payload && payload.length) {
     const timeMap = {
-      10: "6am",
-      20: "9am",
-      30: "11am",
-      40: "1pm",
-      50: "3pm",
-      60: "5pm",
-      70: "7pm",
-      80: "9pm",
-      90: "11pm",
-      100: "12am",
+      10: t("6am"),
+      20: t("9am"),
+      30: t("11am"),
+      40: t("1pm"),
+      50: t("3pm"),
+      60: t("5pm"),
+      70: t("7pm"),
+      80: t("9pm"),
+      90: t("11pm"),
+      100: t("12am"),
     };
 
     const timeLabel = timeMap[label] || label;
