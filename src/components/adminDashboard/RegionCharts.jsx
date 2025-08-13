@@ -86,7 +86,6 @@ export default function IncomeOverTimeChart() {
           color: "#FFFFFF80",
           font: { size: 13, family: "Inter, sans-serif" },
           stepSize: 3,
-          callback: (value) => value,
           padding: 8,
           callback: (value) => t(value.toString()),
         },
